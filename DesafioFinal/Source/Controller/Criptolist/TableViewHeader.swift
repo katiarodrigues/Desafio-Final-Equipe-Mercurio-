@@ -16,7 +16,7 @@ class TableViewHeader: UITableViewHeaderFooterView {
           titleLabel.text = "Moeda Digital"
           titleLabel.translatesAutoresizingMaskIntoConstraints = false
           titleLabel.textColor = .white
-          titleLabel.font = UIFont.systemFont(ofSize: 25, weight: .regular)
+          titleLabel.font = UIFont.systemFont(ofSize: 35, weight: .regular)
           return titleLabel
       }()
       
@@ -63,14 +63,14 @@ class TableViewHeader: UITableViewHeaderFooterView {
         contentView.addSubview(date)
         date.textAlignment = .center
         NSLayoutConstraint.activate([
-            date.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
+            date.topAnchor.constraint(equalTo: self.topAnchor, constant: 40),
             date.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0),
             date.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
     }
     private func searchBarSetup(){
         contentView.addSubview(searchBar)
         NSLayoutConstraint.activate([
-            searchBar.topAnchor.constraint(equalTo: self.topAnchor, constant: 50),
+            searchBar.topAnchor.constraint(equalTo: self.topAnchor, constant: 60),
             searchBar.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0),
             searchBar.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
     }
