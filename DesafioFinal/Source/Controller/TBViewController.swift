@@ -11,8 +11,6 @@ class TBViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         let coinVc = CoinVC()
         let favoriteVC = FavoriteVC()
         
@@ -28,26 +26,37 @@ class TBViewController: UITabBarController {
         for x in 0..<items.count {
             items[x].image = UIImage(systemName: images[x])
         }
-        
-      
     }
     
         
     }
-
-
 class CoinVC: UIViewController{
+    //MARK: View
+    
+    let coinV: CoinV = {
+        let view = CoinV(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    
+    }()
+    //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-
+        setCoinV()
+    }
+    func setCoinV(){
+        self.view.addSubview(coinV)
+        coinV.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        coinV.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        coinV.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        coinV.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
 }
 
 class FavoriteVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .white
     }
 }
 
