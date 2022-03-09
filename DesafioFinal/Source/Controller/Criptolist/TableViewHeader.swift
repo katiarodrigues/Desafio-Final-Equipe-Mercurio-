@@ -41,6 +41,7 @@ class TableViewHeader: UITableViewHeaderFooterView {
       }()
       override init(reuseIdentifier:String?){
           super.init(reuseIdentifier: reuseIdentifier)
+          contentView.backgroundColor = .black
           titleLabelSetup()
           dateSetup()
           searchBarSetup()

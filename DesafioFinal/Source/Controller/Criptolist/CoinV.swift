@@ -45,7 +45,7 @@ extension CoinV: UITableViewDelegate{
         return header
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 120
+        return 120.0
     }
 }
 extension CoinV: UITableViewDataSource{
@@ -58,7 +58,7 @@ extension CoinV: UITableViewDataSource{
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 80
     }
 
 }

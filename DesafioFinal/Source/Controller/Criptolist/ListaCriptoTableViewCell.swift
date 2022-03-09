@@ -26,13 +26,13 @@ class ListaCriptoTableViewCell: UITableViewCell {
         titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         return titleLabel
     }()
-    private let iconFavLabel: UILabel = {
-        let iconFavLabel = UILabel()
-        iconFavLabel.text = "BitCoin"
-        iconFavLabel.translatesAutoresizingMaskIntoConstraints = false
-        iconFavLabel.textColor = .white
-        iconFavLabel.font = UIFont.systemFont(ofSize: 20, weight: .regular)
-        return iconFavLabel
+    private let iconFavImage: UIImageView = {
+        let iconFavImage = UIImageView()
+        iconFavImage.image = UIImage(systemName: "star.fill")
+        iconFavImage.tintColor = .white
+        iconFavImage.contentMode = .scaleAspectFit
+        iconFavImage.translatesAutoresizingMaskIntoConstraints = false
+        return iconFavImage
     }()
     private let subTitleLabel: UILabel = {
         let subTitleLabel = UILabel()
@@ -59,6 +59,7 @@ class ListaCriptoTableViewCell: UITableViewCell {
         contentView.backgroundColor = .black
         iconImageSetup()
         titleLabelSetup()
+        iconFavImageSetup()
         subTitleLabelSetup()
         valueLabelSetup()
     }
@@ -71,22 +72,30 @@ class ListaCriptoTableViewCell: UITableViewCell {
         contentView.addSubview(iconImage)
         NSLayoutConstraint.activate([
             iconImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-            iconImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0),
+            iconImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
             iconImage.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
     }
     private func titleLabelSetup(){
         contentView.addSubview(titleLabel)
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-            titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 50),
+            titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 66),
             titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
+        
+    }
+    private func iconFavImageSetup(){
+        contentView.addSubview(iconFavImage)
+        NSLayoutConstraint.activate([
+            iconFavImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+            iconFavImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant:0),
+            iconFavImage.rightAnchor.constraint(equalTo: self.rightAnchor, constant:-100)])
         
     }
     private func subTitleLabelSetup(){
         contentView.addSubview(subTitleLabel)
         NSLayoutConstraint.activate([
             subTitleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 25),
-            subTitleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 50),
+            subTitleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 66),
             subTitleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
         
     }
@@ -94,7 +103,7 @@ class ListaCriptoTableViewCell: UITableViewCell {
         contentView.addSubview(valueLabel)
         NSLayoutConstraint.activate([
             valueLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
-            valueLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 220),
+            valueLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 270),
             valueLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
         
     }
