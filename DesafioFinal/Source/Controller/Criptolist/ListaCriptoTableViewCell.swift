@@ -10,7 +10,7 @@ import UIKit
 class ListaCriptoTableViewCell: UITableViewCell {
     static let identifier = "ListaCriptoTableViewCell"
     
-    private let iconImage: UIImageView = {
+    lazy var iconImage: UIImageView = {
         let iconImage = UIImageView()
         iconImage.translatesAutoresizingMaskIntoConstraints = false
         iconImage.image = UIImage(named: "bitcoin")
@@ -18,7 +18,7 @@ class ListaCriptoTableViewCell: UITableViewCell {
         iconImage.clipsToBounds = true
         return iconImage
     }()
-    private let titleLabel: UILabel = {
+    lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.text = "BitCoin"
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -26,7 +26,7 @@ class ListaCriptoTableViewCell: UITableViewCell {
         titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         return titleLabel
     }()
-    private let iconFavImage: UIImageView = {
+    lazy var iconFavImage: UIImageView = {
         let iconFavImage = UIImageView()
         iconFavImage.image = UIImage(systemName: "star.fill")
         iconFavImage.tintColor = .white
@@ -34,7 +34,7 @@ class ListaCriptoTableViewCell: UITableViewCell {
         iconFavImage.translatesAutoresizingMaskIntoConstraints = false
         return iconFavImage
     }()
-    private let subTitleLabel: UILabel = {
+    lazy var subTitleLabel: UILabel = {
         let subTitleLabel = UILabel()
         subTitleLabel.text = "BTC"
         subTitleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -43,7 +43,7 @@ class ListaCriptoTableViewCell: UITableViewCell {
         return subTitleLabel
     }()
     
-    private let valueLabel: UILabel = {
+    lazy var valueLabel: UILabel = {
         let  valueLabel = UILabel()
         valueLabel.text = "$ 31,010.20"
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
