@@ -22,7 +22,7 @@ class DetalhesAddViewController: UIViewController {
     //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewAddFav.backgroundColor = .sys
+        viewAddFav.backgroundColor =
         setViewAddFav()
     }
 //    override func viewWillAppear(_ animated: Bool) {

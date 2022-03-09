@@ -12,6 +12,7 @@
 		30DB335C27D81A4D004FE741 /* ListaCriptoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB335B27D81A4D004FE741 /* ListaCriptoTableViewCell.swift */; };
 		30DB335E27D90EFE004FE741 /* DetalhesAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB335D27D90EFE004FE741 /* DetalhesAddViewController.swift */; };
 		30DB336227D947F2004FE741 /* Themes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30DB336127D947F2004FE741 /* Themes.xcassets */; };
+		30DB336427D94938004FE741 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB336327D94938004FE741 /* Color+.swift */; };
 		3930D0AD27D6366200BD446A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930D0AC27D6366200BD446A /* AppDelegate.swift */; };
 		3930D0AF27D6366200BD446A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930D0AE27D6366200BD446A /* SceneDelegate.swift */; };
 		3930D0B627D6366400BD446A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3930D0B527D6366400BD446A /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		30DB335B27D81A4D004FE741 /* ListaCriptoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaCriptoTableViewCell.swift; sourceTree = "<group>"; };
 		30DB335D27D90EFE004FE741 /* DetalhesAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesAddViewController.swift; sourceTree = "<group>"; };
 		30DB336127D947F2004FE741 /* Themes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Themes.xcassets; sourceTree = "<group>"; };
+		30DB336327D94938004FE741 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Color+.swift"; path = "DesafioFinal/Color+.swift"; sourceTree = SOURCE_ROOT; };
 		3930D0A927D6366200BD446A /* DesafioFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3930D0AC27D6366200BD446A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3930D0AE27D6366200BD446A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 		3930D0E527D63E6800BD446A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				30DB336327D94938004FE741 /* Color+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3930D13127D6867900BD446A /* TBViewController.swift in Sources */,
+				30DB336427D94938004FE741 /* Color+.swift in Sources */,
 				30DB335E27D90EFE004FE741 /* DetalhesAddViewController.swift in Sources */,
 				3930D12D27D6835D00BD446A /* Coordinator.swift in Sources */,
 				30DB335C27D81A4D004FE741 /* ListaCriptoTableViewCell.swift in Sources */,
