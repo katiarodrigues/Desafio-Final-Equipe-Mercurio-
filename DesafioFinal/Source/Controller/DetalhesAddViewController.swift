@@ -23,7 +23,7 @@ class DetalhesAddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewAddFav.backgroundColor = .greenBackgroundColor
-        viewAmountByDate.backgroundColor = .red
+        viewAmountByDate.backgroundColor = .black
         setViewAddFav()
         setViewAmountByDate()
         

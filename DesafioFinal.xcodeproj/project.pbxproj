@@ -197,8 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				30DB336527D950A4004FE741 /* CriptoDetailsAddFav */,
-				3930D13027D6867900BD446A /* TBViewController.swift */,
 				30DB335D27D90EFE004FE741 /* DetalhesAddViewController.swift */,
+				3930D13027D6867900BD446A /* TBViewController.swift */,
 				30DB335A27D819FC004FE741 /* Criptolist */,
 			);
 			path = Controller;

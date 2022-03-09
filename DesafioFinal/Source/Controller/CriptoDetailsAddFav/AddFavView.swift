@@ -22,6 +22,7 @@ class AddFavView: UIView {
         valueLabel.text = "$ 31,010.20"
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
         valueLabel.font = UIFont.systemFont(ofSize: 40, weight: .light)
+        valueLabel.textAlignment = .center
         valueLabel.textColor = .white
         return valueLabel
     }()
@@ -30,9 +31,11 @@ class AddFavView: UIView {
         addButton.setTitle("ADICIONAR", for: .normal)
         addButton.titleLabel?.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
         addButton.translatesAutoresizingMaskIntoConstraints = false
-        addButton.backgroundColor = .black
+        addButton.backgroundColor = .greenBackgroundColor
         addButton.contentMode = .scaleAspectFill
         addButton.layer.cornerRadius = 10
+        addButton.layer.borderWidth = 2
+        addButton.layer.borderColor = UIColor.white.cgColor
         return addButton
     }()
     
@@ -58,7 +61,7 @@ class AddFavView: UIView {
         self.addSubview(valueLabel)
         NSLayoutConstraint.activate([
             valueLabel.topAnchor.constraint(equalTo: iconImage.bottomAnchor, constant: 10),
-            valueLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 80),
+            valueLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30),
             valueLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30)])
     }
     private func addButtonSetup(){
