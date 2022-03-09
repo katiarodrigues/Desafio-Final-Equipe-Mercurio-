@@ -33,7 +33,7 @@ class CoinVC: UIViewController{
     //MARK: View
     
     let coinV: CoinV = {
-        let view = CoinV(frame: .zero)
+        let view = CoinV()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

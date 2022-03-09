@@ -8,6 +8,7 @@
 import UIKit
 
 class CoinV: UIView {
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -20,7 +21,7 @@ class CoinV: UIView {
     }()
     //MARk: Inicializadores
     override init(frame: CGRect) {
-        super.init(frame: frame)
+        super.init(frame: .zero)
         loadUIElements()
     }
     
@@ -46,6 +47,9 @@ extension CoinV: UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 120.0
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
     }
 }
 extension CoinV: UITableViewDataSource{
