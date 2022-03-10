@@ -22,7 +22,10 @@ class TableViewHeader: UITableViewHeaderFooterView {
       
       private let date: UILabel = {
           let date = UILabel()
-          date.text = "8 mar 2022"
+          let dateFormated = DateFormatter()
+          dateFormated.dateFormat = "dd MMM yyyy"
+          let exactlyCurrentTime: Date = Date()
+          date.text = "\(dateFormated.string(from: exactlyCurrentTime))"
           date.translatesAutoresizingMaskIntoConstraints = false
           date.font = UIFont.systemFont(ofSize: 12, weight: .regular)
           date.textColor = .white
