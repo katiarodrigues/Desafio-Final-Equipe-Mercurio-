@@ -28,12 +28,6 @@ class DetalhesAddViewController: UIViewController {
         setViewAmountByDate()
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        //mostrar navigation bar
-        navigationController?.setNavigationBarHidden(false, animated: animated)
-        //mudar cor da Status bar
-    }
     func setViewAddFav(){
         self.view.addSubview(viewAddFav)
         viewAddFav.topAnchor.constraint(equalTo: view.topAnchor).isActive = true

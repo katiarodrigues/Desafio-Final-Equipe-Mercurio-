@@ -8,6 +8,25 @@
 import UIKit
 
 class AddFavView: UIView {
+    lazy var backButton: UIButton = {
+        let backButton = UIButton()
+        backButton.setImage(UIImage(systemName: "chevron.backward"), for: .normal)
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        backButton.tintColor = .white
+        backButton.contentMode = .scaleAspectFill
+        backButton.setTitle("Voltar", for: .normal)
+        backButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        return backButton
+    }()
+    lazy var subTitleLable: UILabel = {
+        let  subTitleLable = UILabel()
+        subTitleLable.text = "BTC"
+        subTitleLable.translatesAutoresizingMaskIntoConstraints = false
+        subTitleLable.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        subTitleLable.textAlignment = .center
+        subTitleLable.textColor = .white
+        return subTitleLable
+    }()
 
     lazy var iconImage: UIImageView = {
         let iconImage = UIImageView()
@@ -41,14 +60,33 @@ class AddFavView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
+        backButtonSetup()
         iconImageSetup()
         valueLabelSetup()
         addButtonSetup()
+        subTitleLableSetup()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    private func backButtonSetup(){
+        self.addSubview(backButton)
+        NSLayoutConstraint.activate([
+            backButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 50),
+            backButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 3),
+            backButton.widthAnchor.constraint(equalToConstant: 70),
+            backButton.heightAnchor.constraint(equalToConstant: 50)])
+    }
+    private func subTitleLableSetup(){
+        self.addSubview(subTitleLable)
+        NSLayoutConstraint.activate([
+            subTitleLable.topAnchor.constraint(equalTo: self.topAnchor, constant: 62),
+            subTitleLable.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30),
+            subTitleLable.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30)])
+    }
+   
     private func iconImageSetup(){
         self.addSubview(iconImage)
         NSLayoutConstraint.activate([
