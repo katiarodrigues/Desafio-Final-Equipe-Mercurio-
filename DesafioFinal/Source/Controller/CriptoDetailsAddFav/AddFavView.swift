@@ -27,6 +27,16 @@ class AddFavView: UIView {
         subTitleLable.textColor = .white
         return subTitleLable
     }()
+    lazy var iconFavImage: UIImageView = {
+        let iconFavImage = UIImageView()
+        iconFavImage.translatesAutoresizingMaskIntoConstraints = false
+        iconFavImage.image = UIImage(systemName: "star.fill")
+        iconFavImage.contentMode = .right
+        iconFavImage.tintColor = .white
+        iconFavImage.clipsToBounds = true
+        iconFavImage.isHidden = true
+        return iconFavImage
+    }()
 
     lazy var iconImage: UIImageView = {
         let iconImage = UIImageView()
@@ -56,7 +66,7 @@ class AddFavView: UIView {
         addButton.layer.borderWidth = 2
         addButton.layer.borderColor = UIColor.white.cgColor
         addButton.addTarget(self, action: #selector(addButtonTap), for: .touchUpInside)
-        
+        addButton.isHidden = false
         return addButton
     }()
     lazy var rmvButton: UIButton = {
@@ -70,7 +80,7 @@ class AddFavView: UIView {
         rmvButton.layer.borderWidth = 2
         rmvButton.layer.borderColor = UIColor.white.cgColor
         rmvButton.addTarget(self, action: #selector(rmvButtonTap), for: .touchUpInside)
-        
+        rmvButton.isHidden = true
         return rmvButton
     }()
     
@@ -78,6 +88,7 @@ class AddFavView: UIView {
         super.init(frame: .zero)
         backButtonSetup()
         subTitleLableSetup()
+        iconFavImageSetup()
         iconImageSetup()
         valueLabelSetup()
         addButtonSetup()
@@ -90,10 +101,12 @@ class AddFavView: UIView {
     @objc func addButtonTap(){
         addButton.isHidden = true
         rmvButton.isHidden = false
+        iconFavImage.isHidden = false
     }
     @objc func rmvButtonTap(){
-        rmvButton.isHidden = true
         addButton.isHidden = false
+        rmvButton.isHidden = true
+        iconFavImage.isHidden = true
     }
     
     private func backButtonSetup(){
@@ -111,15 +124,22 @@ class AddFavView: UIView {
             subTitleLable.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30),
             subTitleLable.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30)])
     }
-   
+    private func iconFavImageSetup(){
+        self.addSubview(iconFavImage)
+        NSLayoutConstraint.activate([
+            iconFavImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 100),
+            iconFavImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0),
+            iconFavImage.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -50)])
+            
+    }
     private func iconImageSetup(){
         self.addSubview(iconImage)
         NSLayoutConstraint.activate([
             iconImage.topAnchor.constraint(equalTo: self.centerYAnchor, constant: -90),
             iconImage.leftAnchor.constraint(equalTo: self.centerXAnchor, constant: -20),
             iconImage.rightAnchor.constraint(equalTo: self.rightAnchor)])
-            
     }
+  
     private func valueLabelSetup(){
         self.addSubview(valueLabel)
         NSLayoutConstraint.activate([
