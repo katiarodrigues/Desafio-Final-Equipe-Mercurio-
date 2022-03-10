@@ -107,6 +107,7 @@
 		30DB336527D950A4004FE741 /* CriptoDetailsAddFav */ = {
 			isa = PBXGroup;
 			children = (
+				30DB335D27D90EFE004FE741 /* DetalhesAddViewController.swift */,
 				30DB336627D952B9004FE741 /* AddFavView.swift */,
 				30DB336827D952DC004FE741 /* AmountByDateView.swift */,
 			);
@@ -197,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				30DB336527D950A4004FE741 /* CriptoDetailsAddFav */,
-				30DB335D27D90EFE004FE741 /* DetalhesAddViewController.swift */,
 				3930D13027D6867900BD446A /* TBViewController.swift */,
 				30DB335A27D819FC004FE741 /* Criptolist */,
 			);
