@@ -14,7 +14,7 @@ class CoinCoordinator: Coordinator{
         
     }
     func start() {
-        let viewController = TBViewController()
+        let viewController = DetalhesAddViewController()
         self.navigationController.pushViewController(viewController, animated: true)
 
     }

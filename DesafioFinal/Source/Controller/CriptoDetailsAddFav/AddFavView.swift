@@ -55,20 +55,45 @@ class AddFavView: UIView {
         addButton.layer.cornerRadius = 10
         addButton.layer.borderWidth = 2
         addButton.layer.borderColor = UIColor.white.cgColor
+        addButton.addTarget(self, action: #selector(addButtonTap), for: .touchUpInside)
+        
         return addButton
+    }()
+    lazy var rmvButton: UIButton = {
+        let rmvButton = UIButton()
+        rmvButton.setTitle("REMOVER", for: .normal)
+        rmvButton.titleLabel?.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
+        rmvButton.translatesAutoresizingMaskIntoConstraints = false
+        rmvButton.backgroundColor = .greenBackgroundColor
+        rmvButton.contentMode = .scaleAspectFill
+        rmvButton.layer.cornerRadius = 10
+        rmvButton.layer.borderWidth = 2
+        rmvButton.layer.borderColor = UIColor.white.cgColor
+        rmvButton.addTarget(self, action: #selector(rmvButtonTap), for: .touchUpInside)
+        
+        return rmvButton
     }()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
         backButtonSetup()
+        subTitleLableSetup()
         iconImageSetup()
         valueLabelSetup()
         addButtonSetup()
-        subTitleLableSetup()
+        rmvButtonSetup()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    @objc func addButtonTap(){
+        addButton.isHidden = true
+        rmvButton.isHidden = false
+    }
+    @objc func rmvButtonTap(){
+        rmvButton.isHidden = true
+        addButton.isHidden = false
     }
     
     private func backButtonSetup(){
@@ -110,6 +135,15 @@ class AddFavView: UIView {
             addButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -40),
             addButton.widthAnchor.constraint(equalToConstant: 250),
             addButton.heightAnchor.constraint(equalToConstant: 70)])
+    }
+    private func rmvButtonSetup(){
+        self.addSubview(rmvButton)
+        NSLayoutConstraint.activate([
+            rmvButton.topAnchor.constraint(equalTo: self.centerYAnchor, constant: 60),
+            rmvButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 40),
+            rmvButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -40),
+            rmvButton.widthAnchor.constraint(equalToConstant: 250),
+            rmvButton.heightAnchor.constraint(equalToConstant: 70)])
     }
     
 }

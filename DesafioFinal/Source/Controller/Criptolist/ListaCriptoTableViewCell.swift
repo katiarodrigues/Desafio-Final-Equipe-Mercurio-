@@ -105,7 +105,6 @@ class ListaCriptoTableViewCell: UITableViewCell {
             valueLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
             valueLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 270),
             valueLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
-        
     }
 
 }
