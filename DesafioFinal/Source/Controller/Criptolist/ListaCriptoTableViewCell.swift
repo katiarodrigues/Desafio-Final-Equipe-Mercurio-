@@ -49,6 +49,7 @@ class ListaCriptoTableViewCell: UITableViewCell {
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
         valueLabel.font = UIFont.systemFont(ofSize: 22, weight: .regular)
         valueLabel.textColor = .white
+        valueLabel.textAlignment = .right
         return valueLabel
     }()
     
@@ -87,8 +88,8 @@ class ListaCriptoTableViewCell: UITableViewCell {
         contentView.addSubview(iconFavImage)
         NSLayoutConstraint.activate([
             iconFavImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-            iconFavImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant:0),
-            iconFavImage.rightAnchor.constraint(equalTo: self.rightAnchor, constant:-100)])
+            iconFavImage.rightAnchor.constraint(equalTo: titleLabel.rightAnchor, constant:0),
+            iconFavImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant:0)])
         
     }
     private func subTitleLabelSetup(){
@@ -103,8 +104,9 @@ class ListaCriptoTableViewCell: UITableViewCell {
         contentView.addSubview(valueLabel)
         NSLayoutConstraint.activate([
             valueLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
-            valueLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 270),
-            valueLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
+            valueLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0),
+            valueLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),])
+        
         
     }
 
