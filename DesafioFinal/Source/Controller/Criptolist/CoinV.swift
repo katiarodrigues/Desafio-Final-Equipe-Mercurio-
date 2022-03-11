@@ -49,7 +49,7 @@ extension CoinV: UITableViewDelegate{
         return 120.0
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+    
     }
 }
 extension CoinV: UITableViewDataSource{

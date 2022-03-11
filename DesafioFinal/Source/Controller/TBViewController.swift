@@ -63,34 +63,7 @@ class CoinVC: UIViewController{
 
 class FavoriteVC: UIViewController{
     
-    let coinV: CoinV = {
-        let view = CoinV()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    //MARK: Life Cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .greenBackgroundColor
-        setCoinV()
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        //esconder navigation bar
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-        //mudar cor da Status bar
-        setNeedsStatusBarAppearanceUpdate()
-    }
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        .lightContent
-    }
-    func setCoinV(){
-        self.view.addSubview(coinV)
-        coinV.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        coinV.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        coinV.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        coinV.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-    }
+   
 }
 
 

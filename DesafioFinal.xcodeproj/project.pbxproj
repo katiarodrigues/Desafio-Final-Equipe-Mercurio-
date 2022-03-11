@@ -197,9 +197,9 @@
 		3930D0DF27D63D7000BD446A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				30DB336527D950A4004FE741 /* CriptoDetailsAddFav */,
 				3930D13027D6867900BD446A /* TBViewController.swift */,
 				30DB335A27D819FC004FE741 /* Criptolist */,
+				30DB336527D950A4004FE741 /* CriptoDetailsAddFav */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
