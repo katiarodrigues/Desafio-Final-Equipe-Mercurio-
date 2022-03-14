@@ -169,8 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				3930D13027D6867900BD446A /* TBViewController.swift */,
-				39E38C1F27DA41360006919A /* TableViewHeader.swift */,
 				39CFB08C27DA7D7000AE65BA /* ListaFavViewCell.swift */,
+				39E38C1F27DA41360006919A /* TableViewHeader.swift */,
 				39CFB08E27DAE32600AE65BA /* ErrorView.swift */,
 			);
 			path = Controller;
