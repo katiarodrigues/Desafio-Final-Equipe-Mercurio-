@@ -11,15 +11,15 @@
 		30DB335927D819AE004FE741 /* TableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB335827D819AE004FE741 /* TableViewHeader.swift */; };
 		30DB335C27D81A4D004FE741 /* ListaCriptoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB335B27D81A4D004FE741 /* ListaCriptoTableViewCell.swift */; };
 		30DB335E27D90EFE004FE741 /* DetalhesAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB335D27D90EFE004FE741 /* DetalhesAddViewController.swift */; };
-		30DB336227D947F2004FE741 /* Themes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30DB336127D947F2004FE741 /* Themes.xcassets */; };
 		30DB336427D94938004FE741 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB336327D94938004FE741 /* Color+.swift */; };
 		30DB336727D952B9004FE741 /* AddFavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB336627D952B9004FE741 /* AddFavView.swift */; };
 		30DB336927D952DC004FE741 /* AmountByDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB336827D952DC004FE741 /* AmountByDateView.swift */; };
-		30DB336B27DB9D14004FE741 /* Cripto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB336A27DB9D14004FE741 /* Cripto.swift */; };
+		30DB337427DF8C8F004FE741 /* CollectionTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB337127DF8C8F004FE741 /* CollectionTableViewHeader.swift */; };
+		30DB337527DF8C8F004FE741 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB337227DF8C8F004FE741 /* ErrorView.swift */; };
+		30DB337627DF8C90004FE741 /* ListaFavViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB337327DF8C8F004FE741 /* ListaFavViewCell.swift */; };
+		30DB337927DFA292004FE741 /* Cripto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB337827DFA292004FE741 /* Cripto.swift */; };
 		3930D0AD27D6366200BD446A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930D0AC27D6366200BD446A /* AppDelegate.swift */; };
 		3930D0AF27D6366200BD446A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930D0AE27D6366200BD446A /* SceneDelegate.swift */; };
-		3930D0B627D6366400BD446A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3930D0B527D6366400BD446A /* Assets.xcassets */; };
-		3930D0B927D6366400BD446A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3930D0B727D6366400BD446A /* LaunchScreen.storyboard */; };
 		3930D0C427D6366400BD446A /* DesafioFinalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930D0C327D6366400BD446A /* DesafioFinalTests.swift */; };
 		3930D0CE27D6366400BD446A /* DesafioFinalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930D0CD27D6366400BD446A /* DesafioFinalUITests.swift */; };
 		3930D0D027D6366400BD446A /* DesafioFinalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930D0CF27D6366400BD446A /* DesafioFinalUITestsLaunchTests.swift */; };
@@ -54,7 +54,10 @@
 		30DB336327D94938004FE741 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Color+.swift"; path = "DesafioFinal/Color+.swift"; sourceTree = SOURCE_ROOT; };
 		30DB336627D952B9004FE741 /* AddFavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavView.swift; sourceTree = "<group>"; };
 		30DB336827D952DC004FE741 /* AmountByDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountByDateView.swift; sourceTree = "<group>"; };
-		30DB336A27DB9D14004FE741 /* Cripto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Cripto.swift; path = DesafioFinal/Source/Controller/CriptoDetailsAddFav/Cripto.swift; sourceTree = SOURCE_ROOT; };
+		30DB337127DF8C8F004FE741 /* CollectionTableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTableViewHeader.swift; sourceTree = "<group>"; };
+		30DB337227DF8C8F004FE741 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		30DB337327DF8C8F004FE741 /* ListaFavViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaFavViewCell.swift; sourceTree = "<group>"; };
+		30DB337827DFA292004FE741 /* Cripto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Cripto.swift; path = DesafioFinal/Source/Controller/Cripto.swift; sourceTree = SOURCE_ROOT; };
 		3930D0A927D6366200BD446A /* DesafioFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3930D0AC27D6366200BD446A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3930D0AE27D6366200BD446A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,24 +99,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		30DB335A27D819FC004FE741 /* Criptolist */ = {
+		30DB335A27D819FC004FE741 /* CriptoListaController */ = {
 			isa = PBXGroup;
 			children = (
 				30DB335627D81842004FE741 /* CoinV.swift */,
 				30DB335827D819AE004FE741 /* TableViewHeader.swift */,
 				30DB335B27D81A4D004FE741 /* ListaCriptoTableViewCell.swift */,
 			);
-			path = Criptolist;
+			path = CriptoListaController;
 			sourceTree = "<group>";
 		};
-		30DB336527D950A4004FE741 /* CriptoDetailsAddFav */ = {
+		30DB336527D950A4004FE741 /* CriptoDetailsFavController */ = {
 			isa = PBXGroup;
 			children = (
 				30DB335D27D90EFE004FE741 /* DetalhesAddViewController.swift */,
 				30DB336627D952B9004FE741 /* AddFavView.swift */,
 				30DB336827D952DC004FE741 /* AmountByDateView.swift */,
 			);
-			path = CriptoDetailsAddFav;
+			path = CriptoDetailsFavController;
+			sourceTree = "<group>";
+		};
+		30DB337727DFA0E2004FE741 /* CriptoFavListaController */ = {
+			isa = PBXGroup;
+			children = (
+				30DB337327DF8C8F004FE741 /* ListaFavViewCell.swift */,
+				30DB337127DF8C8F004FE741 /* CollectionTableViewHeader.swift */,
+			);
+			path = CriptoFavListaController;
 			sourceTree = "<group>";
 		};
 		3930D0A027D6366200BD446A = {
@@ -200,8 +212,10 @@
 			isa = PBXGroup;
 			children = (
 				3930D13027D6867900BD446A /* TBViewController.swift */,
-				30DB335A27D819FC004FE741 /* Criptolist */,
-				30DB336527D950A4004FE741 /* CriptoDetailsAddFav */,
+				30DB337227DF8C8F004FE741 /* ErrorView.swift */,
+				30DB335A27D819FC004FE741 /* CriptoListaController */,
+				30DB336527D950A4004FE741 /* CriptoDetailsFavController */,
+				30DB337727DFA0E2004FE741 /* CriptoFavListaController */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -282,7 +296,7 @@
 		3930D0E927D6403900BD446A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				30DB336A27DB9D14004FE741 /* Cripto.swift */,
+				30DB337827DFA292004FE741 /* Cripto.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -310,7 +324,6 @@
 			buildPhases = (
 				3930D0A527D6366200BD446A /* Sources */,
 				3930D0A627D6366200BD446A /* Frameworks */,
-				3930D0A727D6366200BD446A /* Resources */,
 			);
 			buildRules = (
 			);
@@ -401,16 +414,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3930D0A727D6366200BD446A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3930D0B927D6366400BD446A /* LaunchScreen.storyboard in Resources */,
-				30DB336227D947F2004FE741 /* Themes.xcassets in Resources */,
-				3930D0B627D6366400BD446A /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3930D0BD27D6366400BD446A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -437,12 +440,15 @@
 				30DB336427D94938004FE741 /* Color+.swift in Sources */,
 				30DB335E27D90EFE004FE741 /* DetalhesAddViewController.swift in Sources */,
 				3930D12D27D6835D00BD446A /* Coordinator.swift in Sources */,
+				30DB337927DFA292004FE741 /* Cripto.swift in Sources */,
 				30DB335C27D81A4D004FE741 /* ListaCriptoTableViewCell.swift in Sources */,
+				30DB337627DF8C90004FE741 /* ListaFavViewCell.swift in Sources */,
+				30DB337427DF8C8F004FE741 /* CollectionTableViewHeader.swift in Sources */,
 				3930D12F27D683A500BD446A /* CoinCoordinator.swift in Sources */,
 				30DB335727D81842004FE741 /* CoinV.swift in Sources */,
 				3930D0AD27D6366200BD446A /* AppDelegate.swift in Sources */,
+				30DB337527DF8C8F004FE741 /* ErrorView.swift in Sources */,
 				3930D0AF27D6366200BD446A /* SceneDelegate.swift in Sources */,
-				30DB336B27DB9D14004FE741 /* Cripto.swift in Sources */,
 				30DB335927D819AE004FE741 /* TableViewHeader.swift in Sources */,
 				30DB336727D952B9004FE741 /* AddFavView.swift in Sources */,
 			);

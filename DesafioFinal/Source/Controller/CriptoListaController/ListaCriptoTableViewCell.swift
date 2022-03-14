@@ -53,10 +53,10 @@ class ListaCriptoTableViewCell: UITableViewCell {
     }()
     
     func set(cripto: Cripto){
-        iconImage.image = cripto.iconImage
-        titleLabel.text = cripto.title
-        subTitleLabel.text = cripto.subTitle
-        valueLabel.text = cripto.value
+        iconImage.image = cripto.iconImg
+        titleLabel.text = cripto.titleLabl
+        subTitleLabel.text = cripto.subTitleLabel
+        valueLabel.text = cripto.valueLabel
     }
     
     

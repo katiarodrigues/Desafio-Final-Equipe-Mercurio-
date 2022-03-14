@@ -80,10 +80,10 @@ extension CoinV: UITableViewDataSource{
 extension CoinV{
     
     func fetchData() -> [Cripto]{
-        let cripto1 = Cripto(iconImage: UIImage(named: "bitcoin")!, title: "Bitcoin", subTitle: "BTC", value: "32.050,21")
-        let cripto2 = Cripto(iconImage: UIImage(named: "bitcoin")!, title: "Etherium", subTitle: "ETH", value: "54.050,21")
-        let cripto3 = Cripto(iconImage: UIImage(named: "bitcoin")!, title: "DogeCoing", subTitle: "DGC", value: "10.050,21")
-        let cripto4 = Cripto(iconImage: UIImage(named: "bitcoin")!, title: "SeilaCoin", subTitle: "SLC", value: "25.050,21")
+        let cripto1 = Cripto(iconImg: UIImage(named: "bitcoin")!, titleLabl: "Bitcoin", subTitleLabel: "BTC", valueLabel: "32.050,21")
+        let cripto2 = Cripto(iconImg: UIImage(named: "bitcoin")!, titleLabl: "Etherium", subTitleLabel: "ETH", valueLabel: "54.050,21")
+        let cripto3 = Cripto(iconImg: UIImage(named: "bitcoin")!, titleLabl: "DogeCoing", subTitleLabel: "DGC", valueLabel: "10.050,21")
+        let cripto4 = Cripto(iconImg: UIImage(named: "bitcoin")!, titleLabl: "SeilaCoin", subTitleLabel: "SLC", valueLabel: "25.050,21")
         
         return [cripto1, cripto2, cripto3, cripto4]
     }
