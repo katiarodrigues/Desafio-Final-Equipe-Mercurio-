@@ -6,12 +6,14 @@
 //
 
 import UIKit
-
 class TBViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
         
+=======
+>>>>>>> cce46f99c26b87be8e75e8ff909176929bbf45fd
         let coinVc = CoinVC()
         let favoriteVC = FavoriteVC()
         
@@ -27,14 +29,28 @@ class TBViewController: UITabBarController {
         for x in 0..<items.count {
             items[x].image = UIImage(systemName: images[x])
         }
+<<<<<<< HEAD
     }
     
 }
+=======
+        tabBar.barStyle = .black
+    }
+>>>>>>> cce46f99c26b87be8e75e8ff909176929bbf45fd
 
-
+    }
 class CoinVC: UIViewController{
+    //MARK: View
+    
+    let coinV: CoinV = {
+        let view = CoinV()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
         view.backgroundColor = .black
     
 
@@ -89,6 +105,32 @@ class FavoriteVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: view.frame.size.width, height: 70)
     }
+=======
+        setCoinV()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //esconder navigation bar
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        //mudar cor da Status bar
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    func setCoinV(){
+        self.view.addSubview(coinV)
+        coinV.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        coinV.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        coinV.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        coinV.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    }
+}
+
+class FavoriteVC: UIViewController{
+    
+   
+>>>>>>> cce46f99c26b87be8e75e8ff909176929bbf45fd
 }
 
 

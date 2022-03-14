@@ -8,17 +8,20 @@
 import UIKit
 
 class CoinCoordinator: Coordinator{
-    
     var navigationController: UINavigationController
-    
     init(navigationController:UINavigationController){
         self.navigationController = navigationController
+        
     }
-    
-    
     func start() {
+<<<<<<< HEAD
         
         let viewController = TBViewController()
         self.navigationController.pushViewController(viewController, animated: true)
+=======
+        let viewController = TBViewController()
+        self.navigationController.pushViewController(viewController, animated: true)
+
+>>>>>>> cce46f99c26b87be8e75e8ff909176929bbf45fd
     }
 }

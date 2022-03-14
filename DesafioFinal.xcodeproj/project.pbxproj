@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30DB335727D81842004FE741 /* CoinV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB335627D81842004FE741 /* CoinV.swift */; };
+		30DB335927D819AE004FE741 /* TableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB335827D819AE004FE741 /* TableViewHeader.swift */; };
+		30DB335C27D81A4D004FE741 /* ListaCriptoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB335B27D81A4D004FE741 /* ListaCriptoTableViewCell.swift */; };
+		30DB335E27D90EFE004FE741 /* DetalhesAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB335D27D90EFE004FE741 /* DetalhesAddViewController.swift */; };
+		30DB336227D947F2004FE741 /* Themes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30DB336127D947F2004FE741 /* Themes.xcassets */; };
+		30DB336427D94938004FE741 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB336327D94938004FE741 /* Color+.swift */; };
+		30DB336727D952B9004FE741 /* AddFavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB336627D952B9004FE741 /* AddFavView.swift */; };
+		30DB336927D952DC004FE741 /* AmountByDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB336827D952DC004FE741 /* AmountByDateView.swift */; };
+		30DB336B27DB9D14004FE741 /* Cripto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB336A27DB9D14004FE741 /* Cripto.swift */; };
 		3930D0AD27D6366200BD446A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930D0AC27D6366200BD446A /* AppDelegate.swift */; };
 		3930D0AF27D6366200BD446A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930D0AE27D6366200BD446A /* SceneDelegate.swift */; };
 		3930D0B627D6366400BD446A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3930D0B527D6366400BD446A /* Assets.xcassets */; };
@@ -41,6 +50,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		30DB335627D81842004FE741 /* CoinV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinV.swift; sourceTree = "<group>"; };
+		30DB335827D819AE004FE741 /* TableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHeader.swift; sourceTree = "<group>"; };
+		30DB335B27D81A4D004FE741 /* ListaCriptoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaCriptoTableViewCell.swift; sourceTree = "<group>"; };
+		30DB335D27D90EFE004FE741 /* DetalhesAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesAddViewController.swift; sourceTree = "<group>"; };
+		30DB336127D947F2004FE741 /* Themes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Themes.xcassets; sourceTree = "<group>"; };
+		30DB336327D94938004FE741 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Color+.swift"; path = "DesafioFinal/Color+.swift"; sourceTree = SOURCE_ROOT; };
+		30DB336627D952B9004FE741 /* AddFavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavView.swift; sourceTree = "<group>"; };
+		30DB336827D952DC004FE741 /* AmountByDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountByDateView.swift; sourceTree = "<group>"; };
+		30DB336A27DB9D14004FE741 /* Cripto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Cripto.swift; path = DesafioFinal/Source/Controller/CriptoDetailsAddFav/Cripto.swift; sourceTree = SOURCE_ROOT; };
 		3930D0A927D6366200BD446A /* DesafioFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3930D0AC27D6366200BD446A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3930D0AE27D6366200BD446A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +104,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30DB335A27D819FC004FE741 /* Criptolist */ = {
+			isa = PBXGroup;
+			children = (
+				30DB335627D81842004FE741 /* CoinV.swift */,
+				30DB335827D819AE004FE741 /* TableViewHeader.swift */,
+				30DB335B27D81A4D004FE741 /* ListaCriptoTableViewCell.swift */,
+			);
+			path = Criptolist;
+			sourceTree = "<group>";
+		};
+		30DB336527D950A4004FE741 /* CriptoDetailsAddFav */ = {
+			isa = PBXGroup;
+			children = (
+				30DB335D27D90EFE004FE741 /* DetalhesAddViewController.swift */,
+				30DB336627D952B9004FE741 /* AddFavView.swift */,
+				30DB336827D952DC004FE741 /* AmountByDateView.swift */,
+			);
+			path = CriptoDetailsAddFav;
+			sourceTree = "<group>";
+		};
 		3930D0A027D6366200BD446A = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +150,7 @@
 				3930D0DE27D63D4000BD446A /* Source */,
 				3930D0DC27D63BA600BD446A /* Resource */,
 				3930D0B527D6366400BD446A /* Assets.xcassets */,
+				30DB336127D947F2004FE741 /* Themes.xcassets */,
 				3930D0BA27D6366400BD446A /* Info.plist */,
 			);
 			path = DesafioFinal;
@@ -169,9 +208,14 @@
 			isa = PBXGroup;
 			children = (
 				3930D13027D6867900BD446A /* TBViewController.swift */,
+<<<<<<< HEAD
 				39CFB08C27DA7D7000AE65BA /* ListaFavViewCell.swift */,
 				39E38C1F27DA41360006919A /* TableViewHeader.swift */,
 				39CFB08E27DAE32600AE65BA /* ErrorView.swift */,
+=======
+				30DB335A27D819FC004FE741 /* Criptolist */,
+				30DB336527D950A4004FE741 /* CriptoDetailsAddFav */,
+>>>>>>> cce46f99c26b87be8e75e8ff909176929bbf45fd
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -179,13 +223,13 @@
 		3930D0E027D63DAF00BD446A /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				3930D0E727D63EA300BD446A /* Utils */,
-				3930D0E627D63E8B00BD446A /* Localizable */,
-				3930D0E527D63E6800BD446A /* Extensions */,
-				3930D0E427D63E4C00BD446A /* Enums */,
-				3930D0E327D63E3100BD446A /* Constants */,
-				3930D0E227D63E1800BD446A /* Components */,
 				3930D0E127D63DFC00BD446A /* Api */,
+				3930D0E227D63E1800BD446A /* Components */,
+				3930D0E327D63E3100BD446A /* Constants */,
+				3930D0E427D63E4C00BD446A /* Enums */,
+				3930D0E527D63E6800BD446A /* Extensions */,
+				3930D0E627D63E8B00BD446A /* Localizable */,
+				3930D0E727D63EA300BD446A /* Utils */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -221,7 +265,11 @@
 		3930D0E527D63E6800BD446A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				39E38C1D27DA3CC60006919A /* Color+.swift */,
+=======
+				30DB336327D94938004FE741 /* Color+.swift */,
+>>>>>>> cce46f99c26b87be8e75e8ff909176929bbf45fd
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -252,6 +300,7 @@
 		3930D0E927D6403900BD446A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				30DB336A27DB9D14004FE741 /* Cripto.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -375,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3930D0B927D6366400BD446A /* LaunchScreen.storyboard in Resources */,
+				30DB336227D947F2004FE741 /* Themes.xcassets in Resources */,
 				3930D0B627D6366400BD446A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,12 +453,23 @@
 				39E38C1E27DA3CC60006919A /* Color+.swift in Sources */,
 				39CFB08D27DA7D7000AE65BA /* ListaFavViewCell.swift in Sources */,
 				3930D13127D6867900BD446A /* TBViewController.swift in Sources */,
+				30DB336927D952DC004FE741 /* AmountByDateView.swift in Sources */,
+				30DB336427D94938004FE741 /* Color+.swift in Sources */,
+				30DB335E27D90EFE004FE741 /* DetalhesAddViewController.swift in Sources */,
 				3930D12D27D6835D00BD446A /* Coordinator.swift in Sources */,
+<<<<<<< HEAD
 				39CFB08F27DAE32600AE65BA /* ErrorView.swift in Sources */,
 				39E38C2027DA41360006919A /* TableViewHeader.swift in Sources */,
+=======
+				30DB335C27D81A4D004FE741 /* ListaCriptoTableViewCell.swift in Sources */,
+>>>>>>> cce46f99c26b87be8e75e8ff909176929bbf45fd
 				3930D12F27D683A500BD446A /* CoinCoordinator.swift in Sources */,
+				30DB335727D81842004FE741 /* CoinV.swift in Sources */,
 				3930D0AD27D6366200BD446A /* AppDelegate.swift in Sources */,
 				3930D0AF27D6366200BD446A /* SceneDelegate.swift in Sources */,
+				30DB336B27DB9D14004FE741 /* Cripto.swift in Sources */,
+				30DB335927D819AE004FE741 /* TableViewHeader.swift in Sources */,
+				30DB336727D952B9004FE741 /* AddFavView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +644,8 @@
 				INFOPLIST_FILE = DesafioFinal/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -609,6 +672,8 @@
 				INFOPLIST_FILE = DesafioFinal/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
