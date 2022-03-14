@@ -50,6 +50,13 @@ class TableViewHeader: UITableViewHeaderFooterView {
           searchBarSetup()
           
       }
+    override func awakeFromNib() {
+        titleLabel.isAccessibilityElement = true
+        titleLabel.accessibilityHint = "Nome da Cripto Moeda: \(titleLabel)"
+        
+        searchBar.isAccessibilityElement = true
+        searchBar.accessibilityHint = "Barra de busca"
+    }
       required init?(coder: NSCoder) {
           fatalError("init(coder:) has not been implemented")
       }

@@ -21,13 +21,15 @@ class TBViewController: UITabBarController {
         self.setViewControllers([coinVc,favoriteVC], animated: false)
         
         guard let items = self.tabBar.items else {return}
-        
+    
         let images = ["dollarsign.circle.fill", "star.fill"]
         
         for x in 0..<items.count {
             items[x].image = UIImage(systemName: images[x])
         }
+        
     }
+    
     
 }
 
@@ -43,6 +45,8 @@ class CoinVC: UIViewController{
         //MARK: Life Cycle
         override func viewDidLoad() {
             super.viewDidLoad()
+            view.isAccessibilityElement = true
+            view.accessibilityHint = "Tela inicial - Lista de criptomoedas"
             setCoinV()
         }
         override func viewWillAppear(_ animated: Bool) {
@@ -89,6 +93,9 @@ class FavoriteVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
  
         view.addSubview(myCollectionView ?? UICollectionView())
         self.view = view
+        
+        view.isAccessibilityElement = true
+        view.accessibilityHint = "Tela Segundaria - Lista de favoritos"
        
     }
     
