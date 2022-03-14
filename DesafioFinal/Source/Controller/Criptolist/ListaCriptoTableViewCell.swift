@@ -52,6 +52,12 @@ class ListaCriptoTableViewCell: UITableViewCell {
         return valueLabel
     }()
     
+    func set(cripto: Cripto){
+        iconImage.image = cripto.iconImage
+        titleLabel.text = cripto.title
+        subTitleLabel.text = cripto.subTitle
+        valueLabel.text = cripto.value
+    }
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

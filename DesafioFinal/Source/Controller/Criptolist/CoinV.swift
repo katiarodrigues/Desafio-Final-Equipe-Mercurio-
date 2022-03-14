@@ -9,6 +9,8 @@ import UIKit
 
 class CoinV: UIView {
     
+    var criptos: [Cripto] = []
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -22,6 +24,7 @@ class CoinV: UIView {
     //MARk: Inicializadores
     override init(frame: CGRect) {
         super.init(frame: .zero)
+        fetchDataData()
         loadUIElements()
     }
     
@@ -39,6 +42,10 @@ class CoinV: UIView {
         tableView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
+    
+    func fetchDataData(){
+        criptos = fetchData()
+    }
 }
 extension CoinV: UITableViewDelegate{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -54,15 +61,30 @@ extension CoinV: UITableViewDelegate{
 }
 extension CoinV: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return criptos.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ListaCriptoTableViewCell.identifier, for: indexPath)
-    
+        let cell = tableView.dequeueReusableCell(withIdentifier: ListaCriptoTableViewCell.identifier) as! ListaCriptoTableViewCell
+        let cripto = criptos[indexPath.row]
+        
+        cell.set(cripto: cripto)
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
 
+}
+
+
+extension CoinV{
+    
+    func fetchData() -> [Cripto]{
+        let cripto1 = Cripto(iconImage: UIImage(named: "bitcoin")!, title: "Bitcoin", subTitle: "BTC", value: "32.050,21")
+        let cripto2 = Cripto(iconImage: UIImage(named: "bitcoin")!, title: "Etherium", subTitle: "ETH", value: "54.050,21")
+        let cripto3 = Cripto(iconImage: UIImage(named: "bitcoin")!, title: "DogeCoing", subTitle: "DGC", value: "10.050,21")
+        let cripto4 = Cripto(iconImage: UIImage(named: "bitcoin")!, title: "SeilaCoin", subTitle: "SLC", value: "25.050,21")
+        
+        return [cripto1, cripto2, cripto3, cripto4]
+    }
 }

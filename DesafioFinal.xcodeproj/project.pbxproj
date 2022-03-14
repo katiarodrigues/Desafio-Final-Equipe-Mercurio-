@@ -15,6 +15,7 @@
 		30DB336427D94938004FE741 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB336327D94938004FE741 /* Color+.swift */; };
 		30DB336727D952B9004FE741 /* AddFavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB336627D952B9004FE741 /* AddFavView.swift */; };
 		30DB336927D952DC004FE741 /* AmountByDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB336827D952DC004FE741 /* AmountByDateView.swift */; };
+		30DB336B27DB9D14004FE741 /* Cripto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB336A27DB9D14004FE741 /* Cripto.swift */; };
 		3930D0AD27D6366200BD446A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930D0AC27D6366200BD446A /* AppDelegate.swift */; };
 		3930D0AF27D6366200BD446A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930D0AE27D6366200BD446A /* SceneDelegate.swift */; };
 		3930D0B627D6366400BD446A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3930D0B527D6366400BD446A /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		30DB336327D94938004FE741 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Color+.swift"; path = "DesafioFinal/Color+.swift"; sourceTree = SOURCE_ROOT; };
 		30DB336627D952B9004FE741 /* AddFavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavView.swift; sourceTree = "<group>"; };
 		30DB336827D952DC004FE741 /* AmountByDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountByDateView.swift; sourceTree = "<group>"; };
+		30DB336A27DB9D14004FE741 /* Cripto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Cripto.swift; path = DesafioFinal/Source/Controller/CriptoDetailsAddFav/Cripto.swift; sourceTree = SOURCE_ROOT; };
 		3930D0A927D6366200BD446A /* DesafioFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3930D0AC27D6366200BD446A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3930D0AE27D6366200BD446A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 		3930D0E927D6403900BD446A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				30DB336A27DB9D14004FE741 /* Cripto.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				30DB335727D81842004FE741 /* CoinV.swift in Sources */,
 				3930D0AD27D6366200BD446A /* AppDelegate.swift in Sources */,
 				3930D0AF27D6366200BD446A /* SceneDelegate.swift in Sources */,
+				30DB336B27DB9D14004FE741 /* Cripto.swift in Sources */,
 				30DB335927D819AE004FE741 /* TableViewHeader.swift in Sources */,
 				30DB336727D952B9004FE741 /* AddFavView.swift in Sources */,
 			);
