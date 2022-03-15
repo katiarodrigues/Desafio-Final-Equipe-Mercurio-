@@ -9,7 +9,9 @@ import UIKit
 
 class CoinV: UIView {
     
+    
     var criptos: [Cripto] = []
+    var onSelectCripto: ((_ criptoSelect: Cripto) -> Void)?
     
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
@@ -56,7 +58,9 @@ extension CoinV: UITableViewDelegate{
         return 120.0
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
+       
+        onSelectCripto?(criptos[indexPath.row])
+        
     }
 }
 extension CoinV: UITableViewDataSource{

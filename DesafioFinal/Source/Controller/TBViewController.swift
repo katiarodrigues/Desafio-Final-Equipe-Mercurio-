@@ -8,11 +8,15 @@
 import UIKit
 
 class TBViewController: UITabBarController {
-    
+    var onSelectCripto: ((_ criptoSelect: Cripto) -> Void)?
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let coinVc = CoinVC()
+        coinVc.onSelectCripto = { cripto in
+            self.onSelectCripto?(cripto)
+        }
+        
         let favoriteVC = FavoriteVC()
         
         coinVc.title = "Moedas"
@@ -36,7 +40,7 @@ class TBViewController: UITabBarController {
 
 class CoinVC: UIViewController{
     //MARK: View
-        
+    var onSelectCripto: ((_ criptoSelect: Cripto) -> Void)?
         let coinV: CoinV = {
             let view = CoinV()
             view.translatesAutoresizingMaskIntoConstraints = false
@@ -45,8 +49,6 @@ class CoinVC: UIViewController{
         //MARK: Life Cycle
         override func viewDidLoad() {
             super.viewDidLoad()
-            view.isAccessibilityElement = true
-            view.accessibilityHint = "Tela inicial - Lista de criptomoedas"
             setCoinV()
         }
         override func viewWillAppear(_ animated: Bool) {
@@ -55,12 +57,18 @@ class CoinVC: UIViewController{
             navigationController?.setNavigationBarHidden(true, animated: animated)
             //mudar cor da Status bar
             setNeedsStatusBarAppearanceUpdate()
+            
         }
         override var preferredStatusBarStyle: UIStatusBarStyle {
             .lightContent
         }
         func setCoinV(){
             self.view.addSubview(coinV)
+            
+            coinV.onSelectCripto = { Cripto in
+                self.onSelectCripto?(Cripto)
+            }
+        
             coinV.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
             coinV.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
             coinV.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
@@ -93,10 +101,17 @@ class FavoriteVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
  
         view.addSubview(myCollectionView ?? UICollectionView())
         self.view = view
-        
-        view.isAccessibilityElement = true
-        view.accessibilityHint = "Tela Segundaria - Lista de favoritos"
-       
+
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //esconder navigation bar
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        //mudar cor da Status bar
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
