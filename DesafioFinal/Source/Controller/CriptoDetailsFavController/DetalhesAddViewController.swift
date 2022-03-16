@@ -22,11 +22,27 @@ class DetalhesAddViewController: UIViewController {
     //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpNavBar()
+        configureView()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    func setUpNavBar(){
+        //For title in navigation bar
+        let backButton = UIBarButtonItem()
+        navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationItem.title = "BTC"
+        backButton.title = "Voltar"
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+    }
+    func configureView(){
         viewAddFav.backgroundColor = .greenBackgroundColor
         viewAmountByDate.backgroundColor = .black
         setViewAddFav()
         setViewAmountByDate()
-        
     }
     func setViewAddFav(){
         self.view.addSubview(viewAddFav)

@@ -38,8 +38,9 @@ class ListaCriptoTableViewCell: UITableViewCell {
         let subTitleLabel = UILabel()
         subTitleLabel.text = "BTC"
         subTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        subTitleLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        subTitleLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         subTitleLabel.textColor = .white
+        
         return subTitleLabel
     }()
     
@@ -49,6 +50,7 @@ class ListaCriptoTableViewCell: UITableViewCell {
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
         valueLabel.font = UIFont.systemFont(ofSize: 22, weight: .regular)
         valueLabel.textColor = .white
+        valueLabel.contentMode = .left
         return valueLabel
     }()
     
@@ -65,8 +67,8 @@ class ListaCriptoTableViewCell: UITableViewCell {
         contentView.backgroundColor = .black
         iconImageSetup()
         titleLabelSetup()
-        iconFavImageSetup()
         subTitleLabelSetup()
+        iconFavImageSetup()
         valueLabelSetup()
     }
     
@@ -74,43 +76,45 @@ class ListaCriptoTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func iconImageSetup(){
-        contentView.addSubview(iconImage)
-        NSLayoutConstraint.activate([
-            iconImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-            iconImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
-            iconImage.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
-    }
-    private func titleLabelSetup(){
-        contentView.addSubview(titleLabel)
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-            titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 66),
-            titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
-        
-    }
-    private func iconFavImageSetup(){
-        contentView.addSubview(iconFavImage)
-        NSLayoutConstraint.activate([
-            iconFavImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-            iconFavImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant:0),
-            iconFavImage.rightAnchor.constraint(equalTo: self.rightAnchor, constant:-100)])
-        
-    }
-    private func subTitleLabelSetup(){
-        contentView.addSubview(subTitleLabel)
-        NSLayoutConstraint.activate([
-            subTitleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 25),
-            subTitleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 66),
-            subTitleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
-        
-    }
-    private func valueLabelSetup(){
-        contentView.addSubview(valueLabel)
-        NSLayoutConstraint.activate([
-            valueLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
-            valueLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 270),
-            valueLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
-    }
+        private func iconImageSetup(){
+            contentView.addSubview(iconImage)
+            NSLayoutConstraint.activate([
+                iconImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+                iconImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
+                iconImage.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0),
+                iconImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)])
+        }
+        private func titleLabelSetup(){
+            contentView.addSubview(titleLabel)
+            NSLayoutConstraint.activate([
+                titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+                titleLabel.leftAnchor.constraint(equalTo: iconImage.leftAnchor, constant: 50)])
+//                titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
+            
+        }
+        private func subTitleLabelSetup(){
+            contentView.addSubview(subTitleLabel)
+            NSLayoutConstraint.activate([
+                subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+                subTitleLabel.leftAnchor.constraint(equalTo: iconImage.leftAnchor, constant: 50),
+                subTitleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
+        }
+        private func iconFavImageSetup(){
+            contentView.addSubview(iconFavImage)
+            NSLayoutConstraint.activate([
+                iconFavImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+                iconFavImage.leftAnchor.constraint(equalTo: titleLabel.rightAnchor, constant:10),
+//                iconFavImage.rightAnchor.constraint(equalTo: titleLabel.leftAnchor, constant: 0),
+                iconFavImage.widthAnchor.constraint(equalToConstant: 20),
+                iconFavImage.heightAnchor.constraint(equalToConstant: 20)])
+        }
+        private func valueLabelSetup(){
+            contentView.addSubview(valueLabel)
+            NSLayoutConstraint.activate([
+                valueLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
+                valueLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20)])
+               
+        }
+
 
 }

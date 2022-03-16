@@ -49,6 +49,7 @@ class CoinVC: UIViewController{
         //MARK: Life Cycle
         override func viewDidLoad() {
             super.viewDidLoad()
+
             setCoinV()
         }
         override func viewWillAppear(_ animated: Bool) {
