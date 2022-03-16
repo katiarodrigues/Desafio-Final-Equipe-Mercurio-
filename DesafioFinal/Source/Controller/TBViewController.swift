@@ -40,6 +40,7 @@ class TBViewController: UITabBarController {
 
 class CoinVC: UIViewController{
     //MARK: View
+    //Luiz Eduardo
     var onSelectCripto: ((_ criptoSelect: Cripto) -> Void)?
         let coinV: CoinV = {
             let view = CoinV()
@@ -79,8 +80,8 @@ class CoinVC: UIViewController{
 
 class FavoriteVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
+    //Katia
     var myCollectionView:UICollectionView?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -88,8 +89,8 @@ class FavoriteVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         view.backgroundColor = .black
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: 140, height: 130)
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 30, bottom: 10, right: 30)
+        layout.itemSize = CGSize(width: 150, height: 140)
         
         myCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         myCollectionView?.register(ListaFavViewCell.self, forCellWithReuseIdentifier:"ListaFavViewCell")
@@ -106,18 +107,15 @@ class FavoriteVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //esconder navigation bar
         navigationController?.setNavigationBarHidden(true, animated: animated)
-        //mudar cor da Status bar
         setNeedsStatusBarAppearanceUpdate()
-        
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-        return.bitWidth // How many cells to display
+        return 2 // How many cells to display
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

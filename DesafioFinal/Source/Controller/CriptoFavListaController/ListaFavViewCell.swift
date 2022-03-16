@@ -98,15 +98,11 @@ class ListaFavViewCell: UICollectionViewCell {
             titleValueBtc.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
         
     }
-
-
-
-        private func iconImageSetup(){
-
+    private func iconImageSetup(){
             contentView.addSubview(iconImage)
             NSLayoutConstraint.activate([
                 iconImage.topAnchor.constraint(equalTo: self.topAnchor, constant: -15),
-                iconImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 105),
+                iconImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 118),
                 iconImage.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 9)])
 
         }

@@ -33,7 +33,6 @@ class DetalhesAddViewController: UIViewController {
         //For title in navigation bar
         let backButton = UIBarButtonItem()
         navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navigationItem.title = "BTC"
         backButton.title = "Voltar"
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton

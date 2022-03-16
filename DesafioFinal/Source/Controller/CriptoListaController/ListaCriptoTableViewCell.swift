@@ -32,6 +32,7 @@ class ListaCriptoTableViewCell: UITableViewCell {
         iconFavImage.tintColor = .white
         iconFavImage.contentMode = .scaleAspectFit
         iconFavImage.translatesAutoresizingMaskIntoConstraints = false
+        iconFavImage.isHidden = true
         return iconFavImage
     }()
     lazy var subTitleLabel: UILabel = {
