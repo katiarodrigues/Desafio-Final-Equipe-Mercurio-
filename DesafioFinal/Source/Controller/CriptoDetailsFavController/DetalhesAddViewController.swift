@@ -49,7 +49,7 @@ class DetalhesAddViewController: UIViewController {
         viewAddFav.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         viewAddFav.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         viewAddFav.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        viewAddFav.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -400).isActive = true
+        viewAddFav.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
     }
     func setViewAmountByDate(){
         self.view.addSubview(viewAmountByDate)

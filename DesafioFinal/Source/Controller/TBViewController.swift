@@ -110,6 +110,7 @@ class FavoriteVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         navigationController?.setNavigationBarHidden(true, animated: animated)
         //mudar cor da Status bar
         setNeedsStatusBarAppearanceUpdate()
+        
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
