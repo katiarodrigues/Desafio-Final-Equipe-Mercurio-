@@ -18,8 +18,8 @@ class DetaisFavCoordinator: Coordinator{
     }
     func start() {
         let viewController = DetalhesAddViewController()
-        viewController.navigationItem.title = criptModel.subTitleLabel
-        viewController.viewAddFav.valueLabel.text = criptModel.valueLabel
+        viewController.navigationItem.title = criptModel.subTitle
+        viewController.viewAddFav.valueLabel.text = criptModel.value
         self.navigationController.pushViewController(viewController, animated: true)
     }
 }

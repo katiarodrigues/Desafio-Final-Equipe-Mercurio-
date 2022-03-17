@@ -8,8 +8,8 @@
 import UIKit
 
 class ListaCriptoTableViewCell: UITableViewCell {
-    static let identifier = "ListaCriptoTableViewCell"
-    
+    static let identifier = "ListaCriptoTableViewCell" 
+
     lazy var iconImage: UIImageView = {
         let iconImage = UIImageView()
         iconImage.translatesAutoresizingMaskIntoConstraints = false
@@ -54,15 +54,7 @@ class ListaCriptoTableViewCell: UITableViewCell {
         valueLabel.contentMode = .left
         return valueLabel
     }()
-    
-    func set(cripto: Cripto){
-        iconImage.image = cripto.iconImg
-        titleLabel.text = cripto.titleLabl
-        subTitleLabel.text = cripto.subTitleLabel
-        valueLabel.text = cripto.valueLabel
-    }
-    
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = .black
@@ -116,6 +108,26 @@ class ListaCriptoTableViewCell: UITableViewCell {
                 valueLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20)])
                
         }
-
-
+    
+        func configure(with viewModel: Cripto){
+        
+            titleLabel.text = viewModel.title
+            subTitleLabel.text = viewModel.subTitle
+            valueLabel.text =  viewModel.value
+            
+    //        if let data = viewModel.iconData{
+    //            iconImage.image = UIImage(data: data)
+    //        }
+    //        else
+            if let url = viewModel.iconImg{
+                let task = URLSession.shared.dataTask(with: url){ [weak self] data, _, _ in
+                    if let data = data{
+                        DispatchQueue.main.async {
+                            self?.iconImage.image = UIImage(data: data)
+                        }
+                    }
+            }
+            task.resume()
+        }
+    }
 }

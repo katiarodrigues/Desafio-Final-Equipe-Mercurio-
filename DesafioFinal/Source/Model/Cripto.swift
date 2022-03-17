@@ -8,8 +8,18 @@
 import UIKit
 
 struct Cripto{
-    var iconImg: UIImage
-    var titleLabl: String
-    var subTitleLabel: String
-    var valueLabel: String
+    var title: String
+    var subTitle: String
+    var value: String
+    var iconImg: URL?
+//    var iconData: Data?
+    
+//    init(titleLabl: String,
+//          subTitleLabel: String,
+//          valueLabel: String,
+//         iconImg: URL?){
+//        self.titleLabl = titleLabl
+//        self.subTitleLabel = subTitleLabel
+//        self.valueLabel = valueLabel
+//    }
 }
