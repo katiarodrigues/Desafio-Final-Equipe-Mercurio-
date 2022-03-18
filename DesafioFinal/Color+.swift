@@ -10,6 +10,6 @@ import UIKit
 
 extension UIColor{
     static var greenBackgroundColor: UIColor{
-        return UIColor(named: "greenBackgroundColor")!
+        return UIColor(named: "AccentColor")!
     }
 }

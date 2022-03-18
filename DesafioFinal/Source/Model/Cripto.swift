@@ -12,6 +12,9 @@ struct Cripto{
     var subTitle: String
     var value: String
     var iconImg: URL?
+    var valueOneHourUsd: String
+    var valueOneDayUsd: String
+    var valueOneMonthUsd: String
 //    var iconData: Data?
     
 //    init(titleLabl: String,

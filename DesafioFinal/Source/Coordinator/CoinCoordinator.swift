@@ -16,9 +16,9 @@ class CoinCoordinator: Coordinator{
     }
     func start() {
         let viewController = TBViewController()
-//        viewController.onSelectCripto = { cripto in
-//            self.goDetails(viewModel: cripto)
-//        }
+        viewController.onSelectCripto = { cripto in
+            self.goDetails(viewModel: cripto)
+        }
 //        let listaViewController = CoinVC()
 //        listaViewController.onSelectCripto = { viewModel in
 //            self.goDetails(viewModel: viewModel)
@@ -28,8 +28,8 @@ class CoinCoordinator: Coordinator{
 
     }
     
-//    private func goDetails(viewModel: Cripto){
-//        let coordinator = DetaisFavCoordinator(navigationController: self.navigationController, criptoModel: viewModel)
-//        coordinator.start()
-//    }
+    private func goDetails(viewModel: Cripto){
+        let coordinator = DetaisFavCoordinator(navigationController: self.navigationController, criptoModel: viewModel)
+        coordinator.start()
+    }
 }

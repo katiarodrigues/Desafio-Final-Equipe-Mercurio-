@@ -22,25 +22,25 @@ class AmountByDateView: UIView {
         let  hourLabel = UILabel()
         hourLabel.text = "última hora"
         hourLabel.translatesAutoresizingMaskIntoConstraints = false
-        hourLabel.font = UIFont.systemFont(ofSize: 20, weight: .light)
+        hourLabel.font = UIFont.systemFont(ofSize: 15, weight: .light)
         hourLabel.textAlignment = .left
         hourLabel.textColor = .white
         return hourLabel
     }()
     lazy var monthLabel: UILabel = {
         let  monthLabel = UILabel()
-        monthLabel.text = "último mês"
+        monthLabel.text = "último dia"
         monthLabel.translatesAutoresizingMaskIntoConstraints = false
-        monthLabel.font = UIFont.systemFont(ofSize: 20, weight: .light)
+        monthLabel.font = UIFont.systemFont(ofSize: 15, weight: .light)
         monthLabel.textAlignment = .left
         monthLabel.textColor = .white
         return monthLabel
     }()
     lazy var yearLabel: UILabel = {
         let  yearLabel = UILabel()
-        yearLabel.text = "último ano"
+        yearLabel.text = "último mes"
         yearLabel.translatesAutoresizingMaskIntoConstraints = false
-        yearLabel.font = UIFont.systemFont(ofSize: 20, weight: .light)
+        yearLabel.font = UIFont.systemFont(ofSize: 15, weight: .light)
         yearLabel.textAlignment = .left
         yearLabel.textColor = .white
         return yearLabel
@@ -49,7 +49,7 @@ class AmountByDateView: UIView {
         let  hourValueLabel = UILabel()
         hourValueLabel.text = "$ 31,010.20"
         hourValueLabel.translatesAutoresizingMaskIntoConstraints = false
-        hourValueLabel.font = UIFont.systemFont(ofSize: 20, weight: .light)
+        hourValueLabel.font = UIFont.systemFont(ofSize: 15, weight: .light)
         hourValueLabel.textAlignment = .right
         hourValueLabel.textColor = .white
         return hourValueLabel
@@ -58,7 +58,7 @@ class AmountByDateView: UIView {
         let  monthValueLabel = UILabel()
         monthValueLabel.text = "$ 31,010.20"
         monthValueLabel.translatesAutoresizingMaskIntoConstraints = false
-        monthValueLabel.font = UIFont.systemFont(ofSize: 20, weight: .light)
+        monthValueLabel.font = UIFont.systemFont(ofSize: 15, weight: .light)
         monthValueLabel.textAlignment = .left
         monthValueLabel.textColor = .white
         return monthValueLabel
@@ -67,7 +67,7 @@ class AmountByDateView: UIView {
         let  yearValueLabel = UILabel()
         yearValueLabel.text = "$ 31,010.20"
         yearValueLabel.translatesAutoresizingMaskIntoConstraints = false
-        yearValueLabel.font = UIFont.systemFont(ofSize: 20, weight: .light)
+        yearValueLabel.font = UIFont.systemFont(ofSize: 15, weight: .light)
         yearValueLabel.textAlignment = .left
         yearValueLabel.textColor = .white
         return yearValueLabel

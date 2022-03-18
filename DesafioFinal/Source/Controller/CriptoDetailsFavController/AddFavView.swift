@@ -44,13 +44,14 @@ class AddFavView: UIView {
         iconImage.image = UIImage(named: "bitcoin")
         iconImage.contentMode = .left
         iconImage.clipsToBounds = true
+        iconImage.contentMode = .scaleAspectFill
         return iconImage
     }()
     lazy var valueLabel: UILabel = {
         let  valueLabel = UILabel()
         valueLabel.text = "$ 31,010.20"
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
-        valueLabel.font = UIFont.systemFont(ofSize: 40, weight: .light)
+        valueLabel.font = UIFont.systemFont(ofSize: 25, weight: .light)
         valueLabel.textAlignment = .center
         valueLabel.textColor = .white
         return valueLabel
@@ -135,9 +136,10 @@ class AddFavView: UIView {
     private func iconImageSetup(){
         self.addSubview(iconImage)
         NSLayoutConstraint.activate([
-            iconImage.topAnchor.constraint(equalTo: self.centerYAnchor, constant: -90),
+            iconImage.topAnchor.constraint(equalTo: self.centerYAnchor, constant: -70),
             iconImage.leftAnchor.constraint(equalTo: self.centerXAnchor, constant: -20),
-            iconImage.rightAnchor.constraint(equalTo: self.rightAnchor)])
+            iconImage.widthAnchor.constraint(equalToConstant: 40),
+            iconImage.heightAnchor.constraint(equalToConstant: 40)])
     }
   
     private func valueLabelSetup(){
@@ -150,7 +152,7 @@ class AddFavView: UIView {
     private func addButtonSetup(){
         self.addSubview(addButton)
         NSLayoutConstraint.activate([
-            addButton.topAnchor.constraint(equalTo: self.centerYAnchor, constant: 60),
+            addButton.topAnchor.constraint(equalTo: self.centerYAnchor, constant: 50),
             addButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 40),
             addButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -40),
             addButton.widthAnchor.constraint(equalToConstant: 250),

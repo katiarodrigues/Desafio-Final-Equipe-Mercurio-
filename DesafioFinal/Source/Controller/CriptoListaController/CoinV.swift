@@ -9,10 +9,18 @@ import UIKit
 
 class CoinV: UIView {
     
-    
+    static let numberFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.locale = .current
+        formatter.allowsFloats = true
+        formatter.numberStyle = .currency
+        formatter.formatterBehavior = .default
+        formatter.currencySymbol = "$"
+        return formatter
+    }()
     
 //    var criptos: [Cripto] = []
-//    var onSelectCripto: ((_ criptoSelect: Cripto) -> Void)?
+    var onSelectCripto: ((_ criptoSelect: Cripto) -> Void)?
     
     private var viewModel = [Cripto]()
     
@@ -23,13 +31,15 @@ class CoinV: UIView {
         tableView.register(ListaCriptoTableViewCell.self, forCellReuseIdentifier: ListaCriptoTableViewCell.identifier)
         
         tableView.backgroundColor = .black
-        apiData()
+        
         return tableView
     }()
     //MARk: Inicializadores
     override init(frame: CGRect) {
         super.init(frame: .zero)
 //        fetchDataData()
+        
+        apiData()
         tableView.dataSource = self
         tableView.delegate = self
         loadUIElements()
@@ -56,7 +66,7 @@ class CoinV: UIView {
 //            self?.tableView.reloadData()
 //        }
 //    }
-//    
+//
 //    func fetchDataData(){
 //        criptos = fetchData()
 //    }
@@ -71,7 +81,7 @@ extension CoinV: UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
-//        onSelectCripto?(criptos[indexPath.row])
+        onSelectCripto?(viewModel[indexPath.row])
         
     }
 }
@@ -93,13 +103,34 @@ extension CoinV: UITableViewDataSource{
 extension CoinV{
     
     func apiData(){
+        
+        
         ApiService.shared.getCriptoCoins{ [weak self] result in
             switch result {
             case .success(let models):
+                
                 self?.viewModel = models.compactMap({
-                    Cripto(title: $0.name ?? "N/A",
+                    
+                    let price = $0.price_usd ?? 0
+                    let formatter = CoinV.numberFormatter
+                    let priceString = formatter.string(from: NSNumber(value: price))
+                    
+                    let value1Hour = $0.volume_1hrs_usd ?? 0
+                    let value1HourString = formatter.string(from: NSNumber(value: value1Hour))
+                    
+                    let value1day = $0.volume_1day_usd ?? 0
+                    let value1dayString = formatter.string(from: NSNumber(value: value1day))
+                    
+                    let value1Mth = $0.volume_1mth_usd ?? 0
+                    let value1MthString = formatter.string(from: NSNumber(value: value1Mth))
+                    
+                   return Cripto(title: $0.name ?? "N/A",
                            subTitle: $0.asset_id,
-                           value: "$1")
+                           value: priceString ?? "N/A",
+                           valueOneHourUsd: value1HourString ?? "N/A",
+                           valueOneDayUsd: value1dayString ?? "N/A",
+                           valueOneMonthUsd: value1MthString ?? "N/A"
+                    )
                     
                 })
                 DispatchQueue.main.async {

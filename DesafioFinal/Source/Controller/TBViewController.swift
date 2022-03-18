@@ -8,14 +8,14 @@
 import UIKit
 
 class TBViewController: UITabBarController {
-//    var onSelectCripto: ((_ criptoSelect: Cripto) -> Void)?
+    var onSelectCripto: ((_ criptoSelect: Cripto) -> Void)?
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let coinVc = CoinVC()
-//        coinVc.onSelectCripto = { cripto in
-//            self.onSelectCripto?(cripto)
-//        }
+        coinVc.onSelectCripto = { cripto in
+            self.onSelectCripto?(cripto)
+        }
         
         let favoriteVC = FavoriteVC()
         
@@ -44,8 +44,6 @@ class CoinVC: UIViewController{
     
 
     var onSelectCripto: ((_ criptoSelect: Cripto) -> Void)?
-     
-    
         let coinV: CoinV = {
             let view = CoinV()
             view.translatesAutoresizingMaskIntoConstraints = false
@@ -71,10 +69,10 @@ class CoinVC: UIViewController{
         }
         func setCoinV(){
             self.view.addSubview(coinV)
-//            coinV.onSelectCripto = { Cripto in
-//                self.onSelectCripto?(Cripto)
-//            }
-//
+            coinV.onSelectCripto = { Cripto in
+                self.onSelectCripto?(Cripto)
+            }
+
             coinV.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
             coinV.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
             coinV.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true

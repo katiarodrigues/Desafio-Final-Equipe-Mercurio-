@@ -3,12 +3,12 @@
 //  DesafioFinal
 //
 //  Created by Luiz Mendes Silva on 08/03/22.
-//
+//1099327638
 
 import UIKit
 
 class ListaCriptoTableViewCell: UITableViewCell {
-    static let identifier = "ListaCriptoTableViewCell" 
+    static let identifier = "ListaCriptoTableViewCell"
 
     lazy var iconImage: UIImageView = {
         let iconImage = UIImageView()
@@ -16,6 +16,7 @@ class ListaCriptoTableViewCell: UITableViewCell {
         iconImage.image = UIImage(named: "bitcoin")
         iconImage.contentMode = .left
         iconImage.clipsToBounds = true
+        iconImage.contentMode = .scaleAspectFill
         return iconImage
     }()
     lazy var titleLabel: UILabel = {
@@ -23,7 +24,7 @@ class ListaCriptoTableViewCell: UITableViewCell {
         titleLabel.text = "BitCoin"
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.textColor = .white
-        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .regular)
+        titleLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         return titleLabel
     }()
     lazy var iconFavImage: UIImageView = {
@@ -49,7 +50,7 @@ class ListaCriptoTableViewCell: UITableViewCell {
         let  valueLabel = UILabel()
         valueLabel.text = "$ 31,010.20"
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
-        valueLabel.font = UIFont.systemFont(ofSize: 22, weight: .regular)
+        valueLabel.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         valueLabel.textColor = .white
         valueLabel.contentMode = .left
         return valueLabel
@@ -72,24 +73,24 @@ class ListaCriptoTableViewCell: UITableViewCell {
         private func iconImageSetup(){
             contentView.addSubview(iconImage)
             NSLayoutConstraint.activate([
-                iconImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-                iconImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
-                iconImage.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0),
-                iconImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)])
+                iconImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 15),
+                iconImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15),
+                iconImage.widthAnchor.constraint(equalToConstant: 40),
+                iconImage.heightAnchor.constraint(equalToConstant: 40)])
         }
         private func titleLabelSetup(){
             contentView.addSubview(titleLabel)
             NSLayoutConstraint.activate([
-                titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-                titleLabel.leftAnchor.constraint(equalTo: iconImage.leftAnchor, constant: 50)])
+                titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 15),
+                titleLabel.leftAnchor.constraint(equalTo: iconImage.rightAnchor, constant: 5)])
 //                titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
             
         }
         private func subTitleLabelSetup(){
             contentView.addSubview(subTitleLabel)
             NSLayoutConstraint.activate([
-                subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
-                subTitleLabel.leftAnchor.constraint(equalTo: iconImage.leftAnchor, constant: 50),
+                subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 7),
+                subTitleLabel.leftAnchor.constraint(equalTo: iconImage.rightAnchor, constant: 5),
                 subTitleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
         }
         private func iconFavImageSetup(){
@@ -119,7 +120,15 @@ class ListaCriptoTableViewCell: UITableViewCell {
     //            iconImage.image = UIImage(data: data)
     //        }
     //        else
-            if let url = viewModel.iconImg{
+            
+            let iconURL = URL(
+                string :
+                    ApiService.shared.icons.filter({ icon in
+                        icon.asset_id == viewModel.subTitle
+                    }).first?.url ?? "")
+            
+            
+            if let url = iconURL{
                 let task = URLSession.shared.dataTask(with: url){ [weak self] data, _, _ in
                     if let data = data{
                         DispatchQueue.main.async {

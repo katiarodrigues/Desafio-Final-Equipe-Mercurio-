@@ -16,7 +16,9 @@ struct CriptoData: Codable{
   let name: String?
   let price_usd: Float?
   let id_icon: String?
-
+  let volume_1hrs_usd: Float?
+  let volume_1day_usd: Float?
+  let volume_1mth_usd: Float?
 }
 
 struct Icon: Codable{
