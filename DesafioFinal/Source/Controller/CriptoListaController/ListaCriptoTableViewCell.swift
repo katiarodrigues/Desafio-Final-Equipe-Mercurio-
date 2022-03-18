@@ -9,7 +9,7 @@ import UIKit
 
 class ListaCriptoTableViewCell: UITableViewCell {
     static let identifier = "ListaCriptoTableViewCell"
-
+    
     lazy var iconImage: UIImageView = {
         let iconImage = UIImageView()
         iconImage.translatesAutoresizingMaskIntoConstraints = false
@@ -50,12 +50,12 @@ class ListaCriptoTableViewCell: UITableViewCell {
         let  valueLabel = UILabel()
         valueLabel.text = "$ 31,010.20"
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
-        valueLabel.font = UIFont.systemFont(ofSize: 20, weight: .regular)
+        valueLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         valueLabel.textColor = .white
         valueLabel.contentMode = .left
         return valueLabel
     }()
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = .black
@@ -70,71 +70,71 @@ class ListaCriptoTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-        private func iconImageSetup(){
-            contentView.addSubview(iconImage)
-            NSLayoutConstraint.activate([
-                iconImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 15),
-                iconImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15),
-                iconImage.widthAnchor.constraint(equalToConstant: 40),
-                iconImage.heightAnchor.constraint(equalToConstant: 40)])
-        }
-        private func titleLabelSetup(){
-            contentView.addSubview(titleLabel)
-            NSLayoutConstraint.activate([
-                titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 15),
-                titleLabel.leftAnchor.constraint(equalTo: iconImage.rightAnchor, constant: 5)])
-//                titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
-            
-        }
-        private func subTitleLabelSetup(){
-            contentView.addSubview(subTitleLabel)
-            NSLayoutConstraint.activate([
-                subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 7),
-                subTitleLabel.leftAnchor.constraint(equalTo: iconImage.rightAnchor, constant: 5),
-                subTitleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
-        }
-        private func iconFavImageSetup(){
-            contentView.addSubview(iconFavImage)
-            NSLayoutConstraint.activate([
-                iconFavImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-                iconFavImage.leftAnchor.constraint(equalTo: titleLabel.rightAnchor, constant:10),
-//                iconFavImage.rightAnchor.constraint(equalTo: titleLabel.leftAnchor, constant: 0),
-                iconFavImage.widthAnchor.constraint(equalToConstant: 20),
-                iconFavImage.heightAnchor.constraint(equalToConstant: 20)])
-        }
-        private func valueLabelSetup(){
-            contentView.addSubview(valueLabel)
-            NSLayoutConstraint.activate([
-                valueLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
-                valueLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20)])
-               
-        }
-    
-        func configure(with viewModel: Cripto){
+    private func iconImageSetup(){
+        contentView.addSubview(iconImage)
+        NSLayoutConstraint.activate([
+            iconImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 15),
+            iconImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15),
+            iconImage.widthAnchor.constraint(equalToConstant: 40),
+            iconImage.heightAnchor.constraint(equalToConstant: 40)])
+    }
+    private func titleLabelSetup(){
+        contentView.addSubview(titleLabel)
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 15),
+            titleLabel.leftAnchor.constraint(equalTo: iconImage.rightAnchor, constant: 5)])
+        //                titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
         
-            titleLabel.text = viewModel.title
-            subTitleLabel.text = viewModel.subTitle
-            valueLabel.text =  viewModel.value
-            
-    //        if let data = viewModel.iconData{
-    //            iconImage.image = UIImage(data: data)
-    //        }
-    //        else
-            
-            let iconURL = URL(
-                string :
-                    ApiService.shared.icons.filter({ icon in
-                        icon.asset_id == viewModel.subTitle
-                    }).first?.url ?? "")
-            
-            
-            if let url = iconURL{
-                let task = URLSession.shared.dataTask(with: url){ [weak self] data, _, _ in
-                    if let data = data{
-                        DispatchQueue.main.async {
-                            self?.iconImage.image = UIImage(data: data)
-                        }
+    }
+    private func subTitleLabelSetup(){
+        contentView.addSubview(subTitleLabel)
+        NSLayoutConstraint.activate([
+            subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 7),
+            subTitleLabel.leftAnchor.constraint(equalTo: iconImage.rightAnchor, constant: 5),
+            subTitleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
+    }
+    private func iconFavImageSetup(){
+        contentView.addSubview(iconFavImage)
+        NSLayoutConstraint.activate([
+            iconFavImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+            iconFavImage.leftAnchor.constraint(equalTo: titleLabel.rightAnchor, constant:10),
+            //                iconFavImage.rightAnchor.constraint(equalTo: titleLabel.leftAnchor, constant: 0),
+            iconFavImage.widthAnchor.constraint(equalToConstant: 20),
+            iconFavImage.heightAnchor.constraint(equalToConstant: 20)])
+    }
+    private func valueLabelSetup(){
+        contentView.addSubview(valueLabel)
+        NSLayoutConstraint.activate([
+            valueLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
+            valueLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20)])
+        
+    }
+    
+    func configure(with viewModel: Cripto){
+        
+        titleLabel.text = viewModel.title
+        subTitleLabel.text = viewModel.subTitle
+        valueLabel.text =  viewModel.value
+        
+        //        if let data = viewModel.iconData{
+        //            iconImage.image = UIImage(data: data)
+        //        }
+        //        else
+        
+        let iconURL = URL(
+            string :
+                ApiService.shared.icons.filter({ icon in
+                    icon.asset_id == viewModel.subTitle
+                }).first?.url ?? "")
+        
+        
+        if let url = iconURL{
+            let task = URLSession.shared.dataTask(with: url){ [weak self] data, _, _ in
+                if let data = data{
+                    DispatchQueue.main.async {
+                        self?.iconImage.image = UIImage(data: data)
                     }
+                }
             }
             task.resume()
         }

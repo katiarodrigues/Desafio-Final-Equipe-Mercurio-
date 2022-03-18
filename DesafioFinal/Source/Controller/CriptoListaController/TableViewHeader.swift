@@ -7,59 +7,41 @@
 
 import UIKit
 
-class TableViewHeader: UITableViewHeaderFooterView {
-
+class TableViewHeader: UITableViewHeaderFooterView, UISearchBarDelegate {
+    
     static let identifier = "tableHeader"
-      
-      private let titleLabel: UILabel = {
-          let titleLabel = UILabel()
-          titleLabel.text = "Moeda Digital"
-          titleLabel.translatesAutoresizingMaskIntoConstraints = false
-          titleLabel.textColor = .white
-          titleLabel.font = UIFont.systemFont(ofSize: 35, weight: .regular)
-          return titleLabel
-      }()
-      
-      private let date: UILabel = {
-          let date = UILabel()
-          let dateFormated = DateFormatter()
-          dateFormated.dateFormat = "dd MMM yyyy"
-          let exactlyCurrentTime: Date = Date()
-          date.text = "\(dateFormated.string(from: exactlyCurrentTime))"
-          date.translatesAutoresizingMaskIntoConstraints = false
-          date.font = UIFont.systemFont(ofSize: 12, weight: .regular)
-          date.textColor = .white
-          return date
-      }()
-      
-      private let searchBar: UISearchBar = {
-         let searchBar = UISearchBar()
-          searchBar.contentMode = .scaleAspectFit
-          searchBar.translatesAutoresizingMaskIntoConstraints = false
-          searchBar.tintColor = .white
-          searchBar.barTintColor = .black
-          searchBar.placeholder = "Search"
-          searchBar.searchTextField.textColor = .white
-          return searchBar
-      }()
-      override init(reuseIdentifier:String?){
-          super.init(  reuseIdentifier: reuseIdentifier)
-          contentView.backgroundColor = .black
-          titleLabelSetup()
-          dateSetup()
-          searchBarSetup()
-          
-      }
-    override func awakeFromNib() {
-        titleLabel.isAccessibilityElement = true
-        titleLabel.accessibilityHint = "Nome da Cripto Moeda: \(titleLabel)"
+    
+    lazy var titleLabel: UILabel = {
+        let titleLabel = UILabel()
+        titleLabel.text = "Moeda Digital"
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.textColor = .white
+        titleLabel.font = UIFont.systemFont(ofSize: 35, weight: .regular)
+        return titleLabel
+    }()
+    
+    lazy var date: UILabel = {
+        let date = UILabel()
+        let dateFormated = DateFormatter()
+        dateFormated.dateFormat = "dd MMM yyyy"
+        let exactlyCurrentTime: Date = Date()
+        date.text = "\(dateFormated.string(from: exactlyCurrentTime))"
+        date.translatesAutoresizingMaskIntoConstraints = false
+        date.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        date.textColor = .white
+        return date
+    }()
+  
+    override init(reuseIdentifier:String?){
+        super.init(  reuseIdentifier: reuseIdentifier)
+        contentView.backgroundColor = .black
+        titleLabelSetup()
+        dateSetup()
         
-        searchBar.isAccessibilityElement = true
-        searchBar.accessibilityHint = "Barra de busca"
     }
-      required init?(coder: NSCoder) {
-          fatalError("init(coder:) has not been implemented")
-      }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private func titleLabelSetup(){
         contentView.addSubview(titleLabel)
@@ -77,13 +59,6 @@ class TableViewHeader: UITableViewHeaderFooterView {
             date.topAnchor.constraint(equalTo: self.topAnchor, constant: 40),
             date.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0),
             date.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
-    }
-    private func searchBarSetup(){
-        contentView.addSubview(searchBar)
-        NSLayoutConstraint.activate([
-            searchBar.topAnchor.constraint(equalTo: self.topAnchor, constant: 60),
-            searchBar.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0),
-            searchBar.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
     }
 
 }

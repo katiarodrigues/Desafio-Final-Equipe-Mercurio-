@@ -21,7 +21,6 @@
 		30E22D9927E0D87500AF130D /* DetaisFavCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E22D9827E0D87400AF130D /* DetaisFavCoordinator.swift */; };
 		30E22DAD27E292E200AF130D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E22DAC27E292E200AF130D /* Model.swift */; };
 		30E22DAF27E2970B00AF130D /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E22DAE27E2970B00AF130D /* ApiService.swift */; };
-		30FC73C027E2B3F200C91C35 /* CriptoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC73BF27E2B3F200C91C35 /* CriptoViewModel.swift */; };
 		3930D0AD27D6366200BD446A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930D0AC27D6366200BD446A /* AppDelegate.swift */; };
 		3930D0AF27D6366200BD446A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930D0AE27D6366200BD446A /* SceneDelegate.swift */; };
 		3930D0C427D6366400BD446A /* DesafioFinalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930D0C327D6366400BD446A /* DesafioFinalTests.swift */; };
@@ -61,16 +60,15 @@
 		30DB337127DF8C8F004FE741 /* CollectionTableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTableViewHeader.swift; sourceTree = "<group>"; };
 		30DB337227DF8C8F004FE741 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		30DB337327DF8C8F004FE741 /* ListaFavViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaFavViewCell.swift; sourceTree = "<group>"; };
-		30DB337827DFA292004FE741 /* Cripto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Cripto.swift; path = DesafioFinal/Source/Model/Cripto.swift; sourceTree = SOURCE_ROOT; };
+		30DB337827DFA292004FE741 /* Cripto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Cripto.swift; path = DesafioFinal/Source/ViewModel/Cripto.swift; sourceTree = SOURCE_ROOT; };
 		30E22D9827E0D87400AF130D /* DetaisFavCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetaisFavCoordinator.swift; sourceTree = "<group>"; };
 		30E22DAC27E292E200AF130D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		30E22DAE27E2970B00AF130D /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
-		30FC73BF27E2B3F200C91C35 /* CriptoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoViewModel.swift; sourceTree = "<group>"; };
+		30FC73C727E429E700C91C35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3930D0A927D6366200BD446A /* DesafioFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3930D0AC27D6366200BD446A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3930D0AE27D6366200BD446A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3930D0B527D6366400BD446A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3930D0B827D6366400BD446A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3930D0B527D6366400BD446A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = DesafioFinal/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		3930D0BA27D6366400BD446A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3930D0BF27D6366400BD446A /* DesafioFinalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesafioFinalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3930D0C327D6366400BD446A /* DesafioFinalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioFinalTests.swift; sourceTree = "<group>"; };
@@ -127,18 +125,19 @@
 			path = CriptoDetailsFavController;
 			sourceTree = "<group>";
 		};
-		30DB337727DFA0E2004FE741 /* CriptoFavListaController */ = {
+		30DB337727DFA0E2004FE741 /* CriptoFavListController */ = {
 			isa = PBXGroup;
 			children = (
 				30DB337327DF8C8F004FE741 /* ListaFavViewCell.swift */,
 				30DB337127DF8C8F004FE741 /* CollectionTableViewHeader.swift */,
 			);
-			path = CriptoFavListaController;
+			path = CriptoFavListController;
 			sourceTree = "<group>";
 		};
 		30DB337E27DFA6DB004FE741 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				30E22DAE27E2970B00AF130D /* ApiService.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -181,6 +180,7 @@
 		30DB338427DFA742004FE741 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				30DB337827DFA292004FE741 /* Cripto.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -188,7 +188,7 @@
 		30DB338527DFA754004FE741 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				30DB337827DFA292004FE741 /* Cripto.swift */,
+				30E22DAC27E292E200AF130D /* Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -255,7 +255,7 @@
 		3930D0DD27D63BB600BD446A /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				3930D0B727D6366400BD446A /* LaunchScreen.storyboard */,
+				30FC73C627E429E700C91C35 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -280,10 +280,7 @@
 				30DB337227DF8C8F004FE741 /* ErrorView.swift */,
 				30DB335A27D819FC004FE741 /* CriptoListaController */,
 				30DB336527D950A4004FE741 /* CriptoDetailsFavController */,
-				30DB337727DFA0E2004FE741 /* CriptoFavListaController */,
-				30E22DAC27E292E200AF130D /* Model.swift */,
-				30E22DAE27E2970B00AF130D /* ApiService.swift */,
-				30FC73BF27E2B3F200C91C35 /* CriptoViewModel.swift */,
+				30DB337727DFA0E2004FE741 /* CriptoFavListController */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -460,7 +457,6 @@
 				3930D12F27D683A500BD446A /* CoinCoordinator.swift in Sources */,
 				30DB335727D81842004FE741 /* CoinV.swift in Sources */,
 				3930D0AD27D6366200BD446A /* AppDelegate.swift in Sources */,
-				30FC73C027E2B3F200C91C35 /* CriptoViewModel.swift in Sources */,
 				30DB337527DF8C8F004FE741 /* ErrorView.swift in Sources */,
 				30E22DAF27E2970B00AF130D /* ApiService.swift in Sources */,
 				3930D0AF27D6366200BD446A /* SceneDelegate.swift in Sources */,
@@ -503,10 +499,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3930D0B727D6366400BD446A /* LaunchScreen.storyboard */ = {
+		30FC73C627E429E700C91C35 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3930D0B827D6366400BD446A /* Base */,
+				30FC73C727E429E700C91C35 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

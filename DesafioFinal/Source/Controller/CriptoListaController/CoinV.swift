@@ -8,6 +8,11 @@
 import UIKit
 
 class CoinV: UIView {
+    var onSelectCripto: ((_ criptoSelect: Cripto) -> Void)?
+    var isSearch = false
+    var dadosFiltrados = [Cripto]()
+    private var viewModel = [Cripto]()
+    
     
     static let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -19,31 +24,33 @@ class CoinV: UIView {
         return formatter
     }()
     
-//    var criptos: [Cripto] = []
-    var onSelectCripto: ((_ criptoSelect: Cripto) -> Void)?
-    
-    private var viewModel = [Cripto]()
-    
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(TableViewHeader.self, forHeaderFooterViewReuseIdentifier: "header")
         tableView.register(ListaCriptoTableViewCell.self, forCellReuseIdentifier: ListaCriptoTableViewCell.identifier)
-        
         tableView.backgroundColor = .black
-        
         return tableView
     }()
+    lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.contentMode = .scaleAspectFit
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.tintColor = .white
+        searchBar.barTintColor = .black
+        searchBar.placeholder = "Search..."
+        searchBar.searchTextField.textColor = .white
+        searchBar.delegate = self
+        return searchBar
+    }()
+    
     //MARk: Inicializadores
     override init(frame: CGRect) {
         super.init(frame: .zero)
-//        fetchDataData()
-        
         apiData()
         tableView.dataSource = self
         tableView.delegate = self
         loadUIElements()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -51,7 +58,14 @@ class CoinV: UIView {
     }
     private func loadUIElements(){
         setTableView()
-        
+        searchBarSetup()
+    }
+    private func searchBarSetup(){
+        self.addSubview(searchBar)
+        NSLayoutConstraint.activate([
+            searchBar.topAnchor.constraint(equalTo: self.topAnchor, constant: 90),
+            searchBar.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0),
+            searchBar.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
     }
     private func setTableView(){
         self.addSubview(tableView)
@@ -60,16 +74,7 @@ class CoinV: UIView {
         tableView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
-//    private func setData(){
-//        viewModel.fetchCriptoData { [weak self] in
-//            self?.tableView.delegate = self
-//            self?.tableView.reloadData()
-//        }
-//    }
-//
-//    func fetchDataData(){
-//        criptos = fetchData()
-//    }
+    
 }
 extension CoinV: UITableViewDelegate{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -80,31 +85,85 @@ extension CoinV: UITableViewDelegate{
         return 120.0
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
-        onSelectCripto?(viewModel[indexPath.row])
         
+        if isSearch{
+            onSelectCripto?(dadosFiltrados[indexPath.row])
+        }else{
+            onSelectCripto?(viewModel[indexPath.row])
+        }
     }
 }
 extension CoinV: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.count
+        
+        if isSearch{
+            return  dadosFiltrados.count
+        }else{
+            return viewModel.count
+        }
+        
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ListaCriptoTableViewCell.identifier) as! ListaCriptoTableViewCell
-//        let cripto = viewModel.cellForRowAt(indexPath: indexPath)
-        cell.configure(with: viewModel[indexPath.row])
+        if isSearch{
+            cell.configure(with: dadosFiltrados[indexPath.row])
+        }else{
+            cell.configure(with: viewModel[indexPath.row])
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
-
+    
 }
+extension CoinV:UISearchBarDelegate{
+    
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        isSearch = true
+    }
+    
+    public func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        isSearch = false
+    }
+    
+    public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        isSearch = false
+    }
+    
+    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        isSearch = false
+    }
+    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.count == 0 {
+            isSearch = false
+            self.tableView.reloadData()
+        } else {
+            dadosFiltrados = self.viewModel.filter({(coin) -> Bool in
+                let tmp: NSString = coin.title as NSString
+                let range = tmp.range(of: searchText, options:NSString.CompareOptions.caseInsensitive)
+                return range.location != NSNotFound
+            })
+        }
+        if(dadosFiltrados.count == 0){
+            isSearch = false
+        } else {
+            isSearch = true
+        }
+        self.tableView.reloadData()
+    }
+}
+
 extension CoinV{
     
     func apiData(){
-        
-        
         ApiService.shared.getCriptoCoins{ [weak self] result in
             switch result {
             case .success(let models):
@@ -124,12 +183,12 @@ extension CoinV{
                     let value1Mth = $0.volume_1mth_usd ?? 0
                     let value1MthString = formatter.string(from: NSNumber(value: value1Mth))
                     
-                   return Cripto(title: $0.name ?? "N/A",
-                           subTitle: $0.asset_id,
-                           value: priceString ?? "N/A",
-                           valueOneHourUsd: value1HourString ?? "N/A",
-                           valueOneDayUsd: value1dayString ?? "N/A",
-                           valueOneMonthUsd: value1MthString ?? "N/A"
+                    return Cripto(title: $0.name ?? "N/A",
+                                  subTitle: $0.asset_id,
+                                  value: priceString ?? "N/A",
+                                  valueOneHourUsd: value1HourString ?? "N/A",
+                                  valueOneDayUsd: value1dayString ?? "N/A",
+                                  valueOneMonthUsd: value1MthString ?? "N/A"
                     )
                     
                 })

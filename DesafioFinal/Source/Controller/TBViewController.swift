@@ -25,7 +25,7 @@ class TBViewController: UITabBarController {
         self.setViewControllers([coinVc,favoriteVC], animated: false)
         
         guard let items = self.tabBar.items else {return}
-    
+        
         let images = ["dollarsign.circle.fill", "star.fill"]
         
         for x in 0..<items.count {
@@ -34,50 +34,43 @@ class TBViewController: UITabBarController {
         
     }
     
-    
 }
-
-
 class CoinVC: UIViewController{
     //MARK: View
     //Luiz Eduardo
-    
-
     var onSelectCripto: ((_ criptoSelect: Cripto) -> Void)?
-        let coinV: CoinV = {
-            let view = CoinV()
-            view.translatesAutoresizingMaskIntoConstraints = false
-            return view
-        }()
-        //MARK: Life Cycle
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            setCoinV()
-            
-           
+    let coinV: CoinV = {
+        let view = CoinV()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    //MARK: Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tabBarController?.tabBar.barTintColor = .black
+        setCoinV()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //esconder navigation bar
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        //mudar cor da Status bar
+        setNeedsStatusBarAppearanceUpdate()
+        
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    func setCoinV(){
+        self.view.addSubview(coinV)
+        coinV.onSelectCripto = { Cripto in
+            self.onSelectCripto?(Cripto)
         }
-        override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            //esconder navigation bar
-            navigationController?.setNavigationBarHidden(true, animated: animated)
-            //mudar cor da Status bar
-            setNeedsStatusBarAppearanceUpdate()
-            
-        }
-        override var preferredStatusBarStyle: UIStatusBarStyle {
-            .lightContent
-        }
-        func setCoinV(){
-            self.view.addSubview(coinV)
-            coinV.onSelectCripto = { Cripto in
-                self.onSelectCripto?(Cripto)
-            }
-
-            coinV.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-            coinV.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-            coinV.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-            coinV.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        }
+        coinV.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        coinV.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        coinV.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        coinV.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    }
 }
 
 class FavoriteVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
@@ -86,7 +79,7 @@ class FavoriteVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     var myCollectionView:UICollectionView?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tabBarController?.tabBar.barTintColor = .black
         let view = UIView()
         view.backgroundColor = .black
         
@@ -102,10 +95,10 @@ class FavoriteVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
         myCollectionView?.dataSource = self
         myCollectionView?.delegate = self
- 
+        
         view.addSubview(myCollectionView ?? UICollectionView())
         self.view = view
-
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

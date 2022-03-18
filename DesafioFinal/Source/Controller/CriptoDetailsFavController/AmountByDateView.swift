@@ -8,7 +8,7 @@
 import UIKit
 
 class AmountByDateView: UIView {
-
+    
     lazy var subTitleLabel: UILabel = {
         let  subTitleLabel = UILabel()
         subTitleLabel.text = "volumes negociados"

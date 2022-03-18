@@ -8,7 +8,7 @@
 import UIKit
 
 class DetaisFavCoordinator: Coordinator{
-
+    
     var navigationController: UINavigationController
     var criptModel: Cripto
     
@@ -37,10 +37,10 @@ class DetaisFavCoordinator: Coordinator{
                         viewController.viewAddFav.iconImage.image = UIImage(data: data)
                     }
                 }
+            }
+            task.resume()
         }
-        task.resume()
-    }
-       
+        
         self.navigationController.pushViewController(viewController, animated: true)
     }
 }

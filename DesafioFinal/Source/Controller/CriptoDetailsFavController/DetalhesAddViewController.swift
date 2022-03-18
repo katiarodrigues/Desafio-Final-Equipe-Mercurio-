@@ -8,7 +8,7 @@
 import UIKit
 
 class DetalhesAddViewController: UIViewController {
-
+    
     let viewAddFav: AddFavView = {
         let view = AddFavView()
         view.translatesAutoresizingMaskIntoConstraints = false

@@ -8,25 +8,25 @@
 import UIKit
 
 class AddFavView: UIView {
-//    lazy var backButton: UIButton = {
-//        let backButton = UIButton()
-//        backButton.setImage(UIImage(systemName: "chevron.backward"), for: .normal)
-//        backButton.translatesAutoresizingMaskIntoConstraints = false
-//        backButton.tintColor = .white
-//        backButton.contentMode = .scaleAspectFill
-//        backButton.setTitle("Voltar", for: .normal)
-//        backButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .regular)
-//        return backButton
-//    }()
-//    lazy var subTitleLable: UILabel = {
-//        let  subTitleLable = UILabel()
-//        subTitleLable.text = "BTC"
-//        subTitleLable.translatesAutoresizingMaskIntoConstraints = false
-//        subTitleLable.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-//        subTitleLable.textAlignment = .center
-//        subTitleLable.textColor = .white
-//        return subTitleLable
-//    }()
+    //    lazy var backButton: UIButton = {
+    //        let backButton = UIButton()
+    //        backButton.setImage(UIImage(systemName: "chevron.backward"), for: .normal)
+    //        backButton.translatesAutoresizingMaskIntoConstraints = false
+    //        backButton.tintColor = .white
+    //        backButton.contentMode = .scaleAspectFill
+    //        backButton.setTitle("Voltar", for: .normal)
+    //        backButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+    //        return backButton
+    //    }()
+    //    lazy var subTitleLable: UILabel = {
+    //        let  subTitleLable = UILabel()
+    //        subTitleLable.text = "BTC"
+    //        subTitleLable.translatesAutoresizingMaskIntoConstraints = false
+    //        subTitleLable.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+    //        subTitleLable.textAlignment = .center
+    //        subTitleLable.textColor = .white
+    //        return subTitleLable
+    //    }()
     lazy var iconFavImage: UIImageView = {
         let iconFavImage = UIImageView()
         iconFavImage.translatesAutoresizingMaskIntoConstraints = false
@@ -37,7 +37,7 @@ class AddFavView: UIView {
         iconFavImage.isHidden = true
         return iconFavImage
     }()
-
+    
     lazy var iconImage: UIImageView = {
         let iconImage = UIImageView()
         iconImage.translatesAutoresizingMaskIntoConstraints = false
@@ -87,8 +87,8 @@ class AddFavView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-//        backButtonSetup()
-//        subTitleLableSetup()
+        //        backButtonSetup()
+        //        subTitleLableSetup()
         iconFavImageSetup()
         iconImageSetup()
         valueLabelSetup()
@@ -110,28 +110,28 @@ class AddFavView: UIView {
         iconFavImage.isHidden = true
     }
     
-//    private func backButtonSetup(){
-//        self.addSubview(backButton)
-//        NSLayoutConstraint.activate([
-//            backButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 50),
-//            backButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 3),
-//            backButton.widthAnchor.constraint(equalToConstant: 70),
-//            backButton.heightAnchor.constraint(equalToConstant: 50)])
-//    }
-//    private func subTitleLableSetup(){
-//        self.addSubview(subTitleLable)
-//        NSLayoutConstraint.activate([
-//            subTitleLable.topAnchor.constraint(equalTo: self.topAnchor, constant: 62),
-//            subTitleLable.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30),
-//            subTitleLable.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30)])
-//    }
+    //    private func backButtonSetup(){
+    //        self.addSubview(backButton)
+    //        NSLayoutConstraint.activate([
+    //            backButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 50),
+    //            backButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 3),
+    //            backButton.widthAnchor.constraint(equalToConstant: 70),
+    //            backButton.heightAnchor.constraint(equalToConstant: 50)])
+    //    }
+    //    private func subTitleLableSetup(){
+    //        self.addSubview(subTitleLable)
+    //        NSLayoutConstraint.activate([
+    //            subTitleLable.topAnchor.constraint(equalTo: self.topAnchor, constant: 62),
+    //            subTitleLable.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30),
+    //            subTitleLable.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30)])
+    //    }
     private func iconFavImageSetup(){
         self.addSubview(iconFavImage)
         NSLayoutConstraint.activate([
             iconFavImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 100),
             iconFavImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0),
             iconFavImage.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -50)])
-            
+        
     }
     private func iconImageSetup(){
         self.addSubview(iconImage)
@@ -141,7 +141,7 @@ class AddFavView: UIView {
             iconImage.widthAnchor.constraint(equalToConstant: 40),
             iconImage.heightAnchor.constraint(equalToConstant: 40)])
     }
-  
+    
     private func valueLabelSetup(){
         self.addSubview(valueLabel)
         NSLayoutConstraint.activate([
